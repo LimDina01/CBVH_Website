@@ -13,7 +13,7 @@
     </div>
 
     <!-- LEFT COLUMN: Sticky Media Gallery -->
-    <div class="w-full md:w-3/5 md:sticky md:top-24 md:h-[calc(100vh-6rem)] bg-cbvh-onyx relative overflow-hidden group print:relative print:w-full print:h-auto print:mb-12">
+    <div class="w-full md:w-3/5 md:sticky md:top-24 md:h-[calc(100vh-6rem)] bg-cbvh-onyx relative overflow-hidden group print:relative print:w-full print:h-auto print:mb-12 reveal-left">
         
         <!-- Media Controls Overlay -->
         <div class="absolute top-6 left-6 z-20 flex space-x-4 print:hidden">
@@ -66,7 +66,7 @@
     </div>
 
     <!-- RIGHT COLUMN: Scrollable Dossier -->
-    <div class="w-full md:w-2/5 p-8 md:p-16 lg:p-24 overflow-y-auto bg-cbvh-obsidian flex flex-col justify-center print:w-full print:p-0 print:block">
+    <div class="w-full md:w-2/5 p-8 md:p-16 lg:p-24 overflow-y-auto bg-cbvh-obsidian flex flex-col print:w-full print:p-0 print:block reveal-right">
         
         <div class="max-w-xl mx-auto md:mx-0 w-full">
             
@@ -164,19 +164,20 @@
                                 <span class="text-cbvh-ivory font-medium">Ceylon (Sri Lanka)</span>
                             </div>
                             <div>
-                                <span class="block text-[0.6rem] uppercase tracking-widest text-cbvh-gray mb-1">Secondary Stones</span>
-                                <span class="text-cbvh-ivory font-medium">12.4 ct D-Flawless Diamonds</span>
+                                <span class="block text-[0.6rem] uppercase tracking-widest text-cbvh-gray mb-1">Treatment</span>
+                                <span class="text-cbvh-ivory font-medium">None</span>
+                            </div>
+                            <div class="col-span-2 mt-4 pt-4 border-t border-white/5">
+                                <span class="block text-[0.6rem] uppercase tracking-widest text-cbvh-gray mb-1">Diamond Accent</span>
+                                <span class="text-cbvh-ivory font-medium">D Flawless to VVS1</span>
                             </div>
                             <div>
-                                <span class="block text-[0.6rem] uppercase tracking-widest text-cbvh-gray mb-1">Metallurgy</span>
-                                <span class="text-cbvh-ivory font-medium">950 Platinum</span>
+                                <span class="block text-[0.6rem] uppercase tracking-widest text-cbvh-gray mb-1">Total Diamond Weight</span>
+                                <span class="text-cbvh-ivory font-medium">12.45 ct</span>
                             </div>
                             <div>
-                                <span class="block text-[0.6rem] uppercase tracking-widest text-cbvh-gray mb-1">Certification</span>
-                                <a href="#" class="text-cbvh-gold underline decoration-cbvh-gold-40 hover:decoration-cbvh-gold underline-offset-4 flex items-center mt-0.5">
-                                    SSEF Report No. 89304
-                                    <svg class="w-3 h-3 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
-                                </a>
+                                <span class="block text-[0.6rem] uppercase tracking-widest text-cbvh-gray mb-1">Cut / Clarity</span>
+                                <span class="text-cbvh-ivory font-medium">Excellent / Excellent</span>
                             </div>
                         </div>
                         <div class="mt-6 aspect-video bg-white/5 p-2 flex items-center justify-center rounded-sm border border-white/10 relative overflow-hidden group/cert cursor-pointer">
@@ -187,58 +188,103 @@
                         </div>
                     </div>
                 </div>
+            </div> <!-- End Accordion Sections -->
 
-                <!-- Complete The Set -->
-                <div class="accordion-item border-b border-cbvh-gold-20" data-state="closed">
-                    <button class="accordion-trigger w-full py-6 flex items-center justify-between group">
-                        <span class="font-serif text-lg text-cbvh-ivory group-hover:text-cbvh-gold transition">Signature Collections</span>
-                        <span class="text-cbvh-gold transition-transform duration-300 transform group-[&[data-state=open]]:rotate-180">
-                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="square" stroke-linejoin="miter" stroke-width="1.5" d="M19 9l-7 7-7-7"></path></svg>
-                        </span>
-                    </button>
-                    <div class="accordion-content hidden pb-6">
-                        <div class="space-y-4">
-                            <!-- Pairing 1 -->
-                            <a href="#" class="flex items-center space-x-4 p-3 border border-white/10 hover:border-cbvh-gold/50 hover:bg-cbvh-gold/5 transition group">
-                                <div class="w-16 h-16 bg-black flex-shrink-0">
-                                    <img src="/images/jewelry/hero_diamond_earrings_1786938763271.jpg" alt="Earrings" class="w-full h-full object-cover grayscale-[50%] group-hover:grayscale-0 transition-all duration-500">
-                                </div>
-                                <div class="flex-grow">
-                                    <h4 class="font-serif text-sm text-cbvh-ivory mb-1 group-hover:text-cbvh-gold transition">Aurora Radiance</h4>
-                                    <span class="block text-[0.6rem] uppercase tracking-widest text-cbvh-gray">View Collection</span>
-                                </div>
-                            </a>
-                            <!-- Pairing 2 -->
-                            <a href="#" class="flex items-center space-x-4 p-3 border border-white/10 hover:border-cbvh-gold/50 hover:bg-cbvh-gold/5 transition group">
-                                <div class="w-16 h-16 bg-black flex-shrink-0">
-                                    <img src="/images/jewelry/hero_yellow_diamond_ring_1786938510809.jpg" alt="Ring" class="w-full h-full object-cover grayscale-[50%] group-hover:grayscale-0 transition-all duration-500">
-                                </div>
-                                <div class="flex-grow">
-                                    <h4 class="font-serif text-sm text-cbvh-ivory mb-1 group-hover:text-cbvh-gold transition">Empress' Enchanted Pearl</h4>
-                                    <span class="block text-[0.6rem] uppercase tracking-widest text-cbvh-gray">View Collection</span>
-                                </div>
-                            </a>
-                        </div>
-                    </div>
-                </div>
 
-            </div>
 
         </div>
 
-        <!-- Sticky Bottom Bar (Mobile Only) -->
-        <div class="md:hidden fixed bottom-0 left-0 w-full z-40 bg-cbvh-onyx/90 backdrop-blur-xl border-t border-cbvh-gold-40 px-4 py-3 flex space-x-3 shadow-[0_-10px_30px_rgba(0,0,0,0.5)] print:hidden">
-            <button onclick="openAppointmentModal('CBVH-HJ-2026-089')" class="flex-1 py-3 bg-cbvh-ivory text-cbvh-obsidian uppercase tracking-widest text-[0.6rem] font-semibold text-center">
-                Private Viewing
-            </button>
-            <button onclick="launchTelegram('CBVH-HJ-2026-089', 'The L\'Éclipse Royale')" class="w-12 flex-shrink-0 bg-transparent border border-cbvh-gold text-cbvh-gold flex items-center justify-center">
-                <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm5.894 8.221l-1.97 9.28c-.145.658-.537.818-1.084.508l-3-2.21-1.446 1.394c-.14.18-.357.295-.6.295-.002 0-.003 0-.005 0l.213-3.054 5.56-5.022c.24-.213-.054-.334-.373-.121l-6.869 4.326-2.96-.924c-.64-.203-.658-.64.135-.954l11.566-4.458c.538-.196 1.006.128.832.94z"/></svg>
-            </button>
         </div>
 
     </div>
 
 </div>
+
+<!-- Full Width Discover More Section -->
+<section class="w-full bg-cbvh-obsidian py-24 border-t border-cbvh-gold-20 print:hidden relative z-10 overflow-hidden">
+    <div class="mb-12 px-6 md:px-12 text-center reveal-element">
+        <h3 class="font-serif text-3xl md:text-4xl text-cbvh-ivory tracking-wide gold-shimmer">Discover More</h3>
+    </div>
+    
+    <!-- Marquee Container -->
+    <div class="w-full relative group/marquee">
+        <!-- Scrollable Flex container -->
+        <div class="flex w-full overflow-x-auto scrollbar-hide discover-slider cursor-grab active:cursor-grabbing pb-8">
+            <div class="flex w-max">
+            
+            @for ($i = 0; $i < 2; $i++)
+            <div class="flex">
+                <!-- Crimson Sovereign -->
+                <a href="{{ route('collections') }}" class="block relative overflow-hidden bg-black w-[280px] md:w-[380px] aspect-[4/5] border border-white/5 hover:border-cbvh-gold-40 transition-colors duration-700 shrink-0 group/card mr-6">
+                    <img src="/images/jewelry/ruby_necklace.jpg" class="absolute inset-0 w-full h-full object-cover opacity-100 group-hover/card:scale-110 transition-all duration-[1500ms] ease-out">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent pointer-events-none"></div>
+                    <div class="absolute bottom-8 left-8 z-10">
+                        <span class="text-[0.6rem] uppercase tracking-[0.2em] text-cbvh-gold mb-2 block drop-shadow-md transition-all duration-700 group-hover/card:text-cbvh-gold-40">High Jewelry</span>
+                        <h4 class="font-serif text-2xl text-cbvh-ivory group-hover/card:text-cbvh-gold transition-colors duration-500 drop-shadow-md">Crimson Sovereign</h4>
+                    </div>
+                </a>
+
+                <!-- Lumière Éternelle -->
+                <a href="{{ route('collections') }}" class="block relative overflow-hidden bg-black w-[280px] md:w-[380px] aspect-[4/5] border border-white/5 hover:border-cbvh-gold-40 transition-colors duration-700 shrink-0 group/card mr-6">
+                    <img src="/images/jewelry/pearl_bridal_ring.jpg" class="absolute inset-0 w-full h-full object-cover opacity-100 group-hover/card:scale-110 transition-all duration-[1500ms] ease-out">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent pointer-events-none"></div>
+                    <div class="absolute bottom-8 left-8 z-10">
+                        <span class="text-[0.6rem] uppercase tracking-[0.2em] text-cbvh-gold mb-2 block drop-shadow-md transition-all duration-700 group-hover/card:text-cbvh-gold-40">Bridal</span>
+                        <h4 class="font-serif text-2xl text-cbvh-ivory group-hover/card:text-cbvh-gold transition-colors duration-500 drop-shadow-md">Lumière Éternelle</h4>
+                    </div>
+                </a>
+
+                <!-- Aurora Radiance -->
+                <a href="{{ route('collections') }}" class="block relative overflow-hidden bg-black w-[280px] md:w-[380px] aspect-[4/5] border border-white/5 hover:border-cbvh-gold-40 transition-colors duration-700 shrink-0 group/card mr-6">
+                    <img src="/images/jewelry/hero_diamond_earrings_1786938763271.jpg" class="absolute inset-0 w-full h-full object-cover opacity-100 group-hover/card:scale-110 transition-all duration-[1500ms] ease-out">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent pointer-events-none"></div>
+                    <div class="absolute bottom-8 left-8 z-10">
+                        <span class="text-[0.6rem] uppercase tracking-[0.2em] text-cbvh-gold mb-2 block drop-shadow-md transition-all duration-700 group-hover/card:text-cbvh-gold-40">Avant-Garde</span>
+                        <h4 class="font-serif text-2xl text-cbvh-ivory group-hover/card:text-cbvh-gold transition-colors duration-500 drop-shadow-md">Aurora Radiance</h4>
+                    </div>
+                </a>
+                
+                <!-- Verdant Legacy -->
+                <a href="{{ route('collections') }}" class="block relative overflow-hidden bg-black w-[280px] md:w-[380px] aspect-[4/5] border border-white/5 hover:border-cbvh-gold-40 transition-colors duration-700 shrink-0 group/card mr-6">
+                    <img src="/images/jewelry/hero_emerald_ring_1786938499216.jpg" class="absolute inset-0 w-full h-full object-cover opacity-100 group-hover/card:scale-110 transition-all duration-[1500ms] ease-out">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent pointer-events-none"></div>
+                    <div class="absolute bottom-8 left-8 z-10">
+                        <span class="text-[0.6rem] uppercase tracking-[0.2em] text-cbvh-gold mb-2 block drop-shadow-md transition-all duration-700 group-hover/card:text-cbvh-gold-40">Heritage Pieces</span>
+                        <h4 class="font-serif text-2xl text-cbvh-ivory group-hover/card:text-cbvh-gold transition-colors duration-500 drop-shadow-md">Verdant Legacy</h4>
+                    </div>
+                </a>
+
+                <!-- Empress' Enchanted -->
+                <a href="{{ route('collections') }}" class="block relative overflow-hidden bg-black w-[280px] md:w-[380px] aspect-[4/5] border border-white/5 hover:border-cbvh-gold-40 transition-colors duration-700 shrink-0 group/card mr-6">
+                    <img src="/images/jewelry/hero_yellow_diamond_ring_1786938510809.jpg" class="absolute inset-0 w-full h-full object-cover opacity-100 group-hover/card:scale-110 transition-all duration-[1500ms] ease-out">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent pointer-events-none"></div>
+                    <div class="absolute bottom-8 left-8 z-10">
+                        <span class="text-[0.6rem] uppercase tracking-[0.2em] text-cbvh-gold mb-2 block drop-shadow-md transition-all duration-700 group-hover/card:text-cbvh-gold-40">Royal Pearls</span>
+                        <h4 class="font-serif text-2xl text-cbvh-ivory group-hover/card:text-cbvh-gold transition-colors duration-500 drop-shadow-md">Empress' Enchanted</h4>
+                    </div>
+                </a>
+            </div>
+            @endfor
+            
+            </div>
+        </div>
+        
+        <!-- Fading edges for infinite scroll illusion -->
+        <div class="absolute inset-y-0 left-0 w-12 md:w-24 bg-gradient-to-r from-cbvh-obsidian to-transparent pointer-events-none z-20"></div>
+        <div class="absolute inset-y-0 right-0 w-12 md:w-24 bg-gradient-to-l from-cbvh-obsidian to-transparent pointer-events-none z-20"></div>
+    </div>
+</section>
+
+<!-- Sticky Bottom Bar (Mobile Only) -->
+<div class="md:hidden fixed bottom-0 left-0 w-full z-40 bg-cbvh-onyx/90 backdrop-blur-xl border-t border-cbvh-gold-40 px-4 py-3 flex space-x-3 shadow-[0_-10px_30px_rgba(0,0,0,0.5)] print:hidden">
+    <button onclick="openAppointmentModal('CBVH-HJ-2026-089')" class="flex-1 py-3 bg-cbvh-ivory text-cbvh-obsidian uppercase tracking-widest text-[0.6rem] font-semibold text-center">
+        Private Viewing
+    </button>
+    <button onclick="launchTelegram('CBVH-HJ-2026-089', 'The L\'Éclipse Royale')" class="w-12 flex-shrink-0 bg-transparent border border-cbvh-gold text-cbvh-gold flex items-center justify-center">
+        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm5.894 8.221l-1.97 9.28c-.145.658-.537.818-1.084.508l-3-2.21-1.446 1.394c-.14.18-.357.295-.6.295-.002 0-.003 0-.005 0l.213-3.054 5.56-5.022c.24-.213-.054-.334-.373-.121l-6.869 4.326-2.96-.924c-.64-.203-.658-.64.135-.954l11.566-4.458c.538-.196 1.006.128.832.94z"/></svg>
+    </button>
+</div>
+
 @endsection
 
 @push('scripts')
@@ -267,6 +313,80 @@
                 content.classList.remove('hidden');
             }
         });
+</script>
+<script>
+    // Discover More Interactive Slider
+    document.addEventListener('DOMContentLoaded', () => {
+        const slider = document.querySelector('.discover-slider');
+        const innerTrack = slider.querySelector('.w-max');
+        if (!slider || !innerTrack) return;
+
+        let isInteracting = false;
+        let animationId;
+
+        // Interaction state handlers
+        const pause = () => isInteracting = true;
+        const resume = () => isInteracting = false;
+
+        slider.addEventListener('mouseenter', pause);
+        slider.addEventListener('mouseleave', resume);
+        slider.addEventListener('touchstart', pause, {passive: true});
+        slider.addEventListener('touchend', resume);
+        
+        // Prevent native drag on images and links
+        slider.addEventListener('dragstart', (e) => e.preventDefault());
+        
+        // Manual drag for desktop
+        let isDragging = false;
+        let hasDragged = false;
+        let startX, scrollLeft;
+        
+        slider.addEventListener('mousedown', (e) => {
+            isDragging = true;
+            hasDragged = false;
+            pause();
+            startX = e.pageX - slider.offsetLeft;
+            scrollLeft = slider.scrollLeft;
+        });
+        
+        window.addEventListener('mouseup', () => {
+            if(isDragging) {
+                isDragging = false;
+                resume();
+            }
+        });
+        
+        slider.addEventListener('mousemove', (e) => {
+            if (!isDragging) return;
+            hasDragged = true;
+            e.preventDefault();
+            const x = e.pageX - slider.offsetLeft;
+            const walk = (x - startX) * 2;
+            slider.scrollLeft = scrollLeft - walk;
+        });
+        
+        slider.addEventListener('click', (e) => {
+            if (hasDragged) {
+                e.preventDefault();
+                e.stopPropagation();
+            }
+        });
+
+        function autoScroll() {
+            if (!isInteracting && !isDragging) {
+                slider.scrollLeft += 1;
+                
+                // If we've scrolled past half the inner track (which contains 2 identical sets)
+                // Seamlessly snap back to the start
+                if (slider.scrollLeft >= innerTrack.scrollWidth / 2) {
+                    slider.scrollLeft = 0;
+                }
+            }
+            animationId = requestAnimationFrame(autoScroll);
+        }
+        
+        // Start animation
+        autoScroll();
     });
 </script>
 @endpush

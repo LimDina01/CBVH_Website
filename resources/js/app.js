@@ -194,7 +194,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     // --- Scroll Reveal Animations ---
-    const revealElements = document.querySelectorAll('.reveal-element');
+    const revealElements = document.querySelectorAll('.reveal-element, .reveal-left, .reveal-right');
     const revealObserver = new IntersectionObserver((entries, observer) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {

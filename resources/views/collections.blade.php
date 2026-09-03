@@ -20,25 +20,25 @@
     <!-- Filter/Sort Bar -->
     <div class="px-6 md:px-12 max-w-[1600px] mx-auto mb-12 flex flex-col md:flex-row justify-between items-center border-b border-cbvh-gold-20 pb-4 print:hidden reveal-element" style="transition-delay: 100ms;">
         <div class="flex space-x-6 mb-4 md:mb-0">
-            <button class="text-xs uppercase tracking-widest text-cbvh-gold border-b border-cbvh-gold pb-1">All Collections</button>
-            <button class="text-xs uppercase tracking-widest text-cbvh-gray hover:text-cbvh-ivory transition border-b border-transparent pb-1">High Jewelry</button>
-            <button class="text-xs uppercase tracking-widest text-cbvh-gray hover:text-cbvh-ivory transition border-b border-transparent pb-1">Bridal</button>
+            <button class="filter-btn text-xs uppercase tracking-widest text-cbvh-gold border-b border-cbvh-gold pb-1" data-filter="all">All Collections</button>
+            <button class="filter-btn text-xs uppercase tracking-widest text-cbvh-gray hover:text-cbvh-ivory transition border-b border-transparent pb-1" data-filter="high-jewelry">High Jewelry</button>
+            <button class="filter-btn text-xs uppercase tracking-widest text-cbvh-gray hover:text-cbvh-ivory transition border-b border-transparent pb-1" data-filter="bridal">Bridal</button>
         </div>
         <div class="flex items-center space-x-4">
             <span class="text-xs uppercase tracking-widest text-cbvh-gray">Sort By</span>
-            <select class="bg-transparent border border-white/20 text-cbvh-ivory text-xs uppercase tracking-widest p-2 focus:outline-none focus:border-cbvh-gold transition">
-                <option class="bg-cbvh-onyx">Latest Arrivals</option>
-                <option class="bg-cbvh-onyx">Heritage Pieces</option>
+            <select id="sort-select" class="bg-transparent border border-white/20 text-cbvh-ivory text-xs uppercase tracking-widest p-2 focus:outline-none focus:border-cbvh-gold transition cursor-pointer">
+                <option value="latest" class="bg-cbvh-onyx">Latest Arrivals</option>
+                <option value="heritage" class="bg-cbvh-onyx">Heritage Pieces</option>
             </select>
         </div>
     </div>
 
     <!-- Collections Grid -->
     <section class="px-6 md:px-12 max-w-[1600px] mx-auto mt-12">
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-12">
+        <div id="collections-grid" class="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-12 grid-flow-row-dense">
             
             <!-- Collection 1: Romduol (Large featured) -->
-            <div class="md:col-span-2 group relative overflow-hidden bg-cbvh-onyx border border-white/5 hover:border-cbvh-gold-40 transition-colors duration-700 h-[60vh] md:h-[70vh] reveal-element">
+            <div class="collection-item md:col-span-2 group relative overflow-hidden bg-cbvh-onyx border border-white/5 hover:border-cbvh-gold-40 transition-colors duration-700 h-[60vh] md:h-[70vh] reveal-element" data-category="high-jewelry" data-age="2">
                 <img src="/images/jewelry/hero_sapphire_necklace_1786938484500.jpg" alt="The Romduol Collection" class="absolute inset-0 w-full h-full object-cover opacity-90 group-hover:scale-105 group-hover:opacity-100 transition-all duration-[2000ms] ease-out">
                 <!-- Base Gradient -->
                 <div class="absolute inset-x-0 bottom-0 h-2/3 bg-gradient-to-t from-cbvh-obsidian/70 via-cbvh-obsidian/40 to-transparent pointer-events-none transition-opacity duration-700"></div>
@@ -58,7 +58,7 @@
             </div>
 
             <!-- Collection 2: Verdant Legacy -->
-            <div class="group relative overflow-hidden bg-cbvh-onyx border border-white/5 hover:border-cbvh-gold-40 transition-colors duration-700 h-[50vh] md:h-[60vh]">
+            <div class="collection-item group relative overflow-hidden bg-cbvh-onyx border border-white/5 hover:border-cbvh-gold-40 transition-colors duration-700 h-[50vh] md:h-[60vh]" data-category="high-jewelry" data-age="4">
                 <img src="/images/jewelry/hero_emerald_ring_1786938499216.jpg" alt="Verdant Legacy" class="absolute inset-0 w-full h-full object-cover opacity-80 group-hover:scale-105 group-hover:opacity-100 transition-all duration-[2000ms] ease-out grayscale-[20%] group-hover:grayscale-0">
                 <!-- Base Gradient -->
                 <div class="absolute inset-x-0 bottom-0 h-3/4 bg-gradient-to-t from-cbvh-obsidian/70 via-cbvh-obsidian/40 to-transparent pointer-events-none transition-opacity duration-700"></div>
@@ -76,7 +76,7 @@
             </div>
 
             <!-- Collection 3: Empress' Enchanted -->
-            <div class="group relative overflow-hidden bg-cbvh-onyx border border-white/5 hover:border-cbvh-gold-40 transition-colors duration-700 h-[50vh] md:h-[60vh]">
+            <div class="collection-item group relative overflow-hidden bg-cbvh-onyx border border-white/5 hover:border-cbvh-gold-40 transition-colors duration-700 h-[50vh] md:h-[60vh]" data-category="bridal" data-age="1">
                 <img src="/images/jewelry/hero_yellow_diamond_ring_1786938510809.jpg" alt="Empress' Enchanted" class="absolute inset-0 w-full h-full object-cover opacity-80 group-hover:scale-105 group-hover:opacity-100 transition-all duration-[2000ms] ease-out grayscale-[20%] group-hover:grayscale-0">
                 <!-- Base Gradient -->
                 <div class="absolute inset-x-0 bottom-0 h-3/4 bg-gradient-to-t from-cbvh-obsidian/70 via-cbvh-obsidian/40 to-transparent pointer-events-none transition-opacity duration-700"></div>
@@ -93,8 +93,44 @@
                 </div>
             </div>
 
+            <!-- Collection 5 (New): Crimson Sovereign -->
+            <div class="collection-item group relative overflow-hidden bg-cbvh-onyx border border-white/5 hover:border-cbvh-gold-40 transition-colors duration-700 h-[50vh] md:h-[60vh]" data-category="high-jewelry" data-age="5">
+                <img src="/images/jewelry/ruby_necklace.jpg" alt="Crimson Sovereign" class="absolute inset-0 w-full h-full object-cover opacity-80 group-hover:scale-105 group-hover:opacity-100 transition-all duration-[2000ms] ease-out grayscale-[20%] group-hover:grayscale-0">
+                <!-- Base Gradient -->
+                <div class="absolute inset-x-0 bottom-0 h-3/4 bg-gradient-to-t from-cbvh-obsidian/70 via-cbvh-obsidian/40 to-transparent pointer-events-none transition-opacity duration-700"></div>
+                <!-- Darker Hover Gradient for Readability -->
+                <div class="absolute inset-x-0 bottom-0 h-3/4 bg-gradient-to-t from-cbvh-obsidian via-cbvh-obsidian/80 to-transparent pointer-events-none opacity-100 md:opacity-0 md:group-hover:opacity-100 transition-opacity duration-700"></div>
+                <div class="absolute bottom-0 left-0 w-full p-8 md:p-10 z-10">
+                    <span class="text-[0.6rem] uppercase tracking-[0.2em] text-cbvh-gold mb-3 block drop-shadow-md transition-all duration-700 group-hover:text-cbvh-gold-40">High Jewelry</span>
+                    <h2 class="font-serif text-2xl md:text-3xl text-cbvh-ivory mb-3 group-hover:text-cbvh-gold transition-colors duration-500 drop-shadow-lg">Crimson Sovereign</h2>
+                    <p class="text-cbvh-gray-light text-xs md:text-sm mb-6 line-clamp-2 drop-shadow-md">A dramatic display of deep, unheated rubies encased in exquisite diamond flora, echoing royal bloodlines.</p>
+                    <a href="#" class="inline-flex items-center space-x-3 text-[0.65rem] uppercase tracking-widest text-cbvh-ivory hover:text-cbvh-gold transition group/btn drop-shadow-md">
+                        <span>Discover</span>
+                        <span class="w-6 h-px bg-current group-hover/btn:w-10 transition-all"></span>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Collection 6 (New): Lumière Éternelle -->
+            <div class="collection-item group relative overflow-hidden bg-cbvh-onyx border border-white/5 hover:border-cbvh-gold-40 transition-colors duration-700 h-[50vh] md:h-[60vh]" data-category="bridal" data-age="6">
+                <img src="/images/jewelry/pearl_bridal_ring.jpg" alt="Lumière Éternelle" class="absolute inset-0 w-full h-full object-cover opacity-80 group-hover:scale-105 group-hover:opacity-100 transition-all duration-[2000ms] ease-out grayscale-[20%] group-hover:grayscale-0">
+                <!-- Base Gradient -->
+                <div class="absolute inset-x-0 bottom-0 h-3/4 bg-gradient-to-t from-cbvh-obsidian/70 via-cbvh-obsidian/40 to-transparent pointer-events-none transition-opacity duration-700"></div>
+                <!-- Darker Hover Gradient for Readability -->
+                <div class="absolute inset-x-0 bottom-0 h-3/4 bg-gradient-to-t from-cbvh-obsidian via-cbvh-obsidian/80 to-transparent pointer-events-none opacity-100 md:opacity-0 md:group-hover:opacity-100 transition-opacity duration-700"></div>
+                <div class="absolute bottom-0 left-0 w-full p-8 md:p-10 z-10">
+                    <span class="text-[0.6rem] uppercase tracking-[0.2em] text-cbvh-gold mb-3 block drop-shadow-md transition-all duration-700 group-hover:text-cbvh-gold-40">Bridal Collection</span>
+                    <h2 class="font-serif text-2xl md:text-3xl text-cbvh-ivory mb-3 group-hover:text-cbvh-gold transition-colors duration-500 drop-shadow-lg">Lumière Éternelle</h2>
+                    <p class="text-cbvh-gray-light text-xs md:text-sm mb-6 line-clamp-2 drop-shadow-md">Flawless South Sea pearls cradled in platinum, symbolizing purity, wisdom, and an eternal vow.</p>
+                    <a href="#" class="inline-flex items-center space-x-3 text-[0.65rem] uppercase tracking-widest text-cbvh-ivory hover:text-cbvh-gold transition group/btn drop-shadow-md">
+                        <span>Discover</span>
+                        <span class="w-6 h-px bg-current group-hover/btn:w-10 transition-all"></span>
+                    </a>
+                </div>
+            </div>
+
             <!-- Collection 4: Aurora Radiance (Left as half-half because it works well for the design flow) -->
-            <div class="md:col-span-2 group relative overflow-hidden bg-cbvh-onyx border border-white/5 hover:border-cbvh-gold-40 transition-colors duration-700 flex flex-col md:flex-row h-auto md:h-[50vh]">
+            <div class="collection-item md:col-span-2 group relative overflow-hidden bg-cbvh-onyx border border-white/5 hover:border-cbvh-gold-40 transition-colors duration-700 flex flex-col md:flex-row h-auto md:h-[50vh]" data-category="high-jewelry" data-age="3">
                 <div class="w-full md:w-1/2 h-[40vh] md:h-full relative overflow-hidden shrink-0">
                     <img src="/images/jewelry/hero_diamond_earrings_1786938763271.jpg" alt="Aurora Radiance" class="absolute inset-0 w-full h-full object-cover opacity-80 group-hover:scale-105 group-hover:opacity-100 transition-all duration-[2000ms] ease-out grayscale-[20%] group-hover:grayscale-0">
                     <div class="absolute inset-0 bg-gradient-to-t from-cbvh-obsidian/50 to-transparent md:hidden"></div>
@@ -116,4 +152,74 @@
     </section>
 
 </div>
+
+@push('scripts')
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const filterBtns = document.querySelectorAll('.filter-btn');
+        const sortSelect = document.getElementById('sort-select');
+        const grid = document.getElementById('collections-grid');
+        const items = Array.from(document.querySelectorAll('.collection-item'));
+
+        // Filtering Logic
+        filterBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                // Update active button styling
+                filterBtns.forEach(b => {
+                    b.classList.remove('text-cbvh-gold', 'border-cbvh-gold');
+                    b.classList.add('text-cbvh-gray', 'border-transparent');
+                });
+                btn.classList.remove('text-cbvh-gray', 'border-transparent');
+                btn.classList.add('text-cbvh-gold', 'border-cbvh-gold');
+
+                const filter = btn.dataset.filter;
+                
+                // Show/Hide Items
+                items.forEach(item => {
+                    if (filter === 'all' || item.dataset.category === filter) {
+                        item.style.display = '';
+                        // Small animation pop when shown
+                        item.style.opacity = '0';
+                        setTimeout(() => {
+                            item.style.transition = 'opacity 0.5s ease-in-out';
+                            item.style.opacity = '1';
+                        }, 50);
+                    } else {
+                        item.style.display = 'none';
+                    }
+                });
+            });
+        });
+
+        // Sorting Logic
+        sortSelect.addEventListener('change', (e) => {
+            const sortVal = e.target.value;
+            
+            const sortedItems = items.sort((a, b) => {
+                const ageA = parseInt(a.dataset.age);
+                const ageB = parseInt(b.dataset.age);
+                
+                if (sortVal === 'latest') {
+                    return ageA - ageB; // Lowest age (1) first
+                } else {
+                    return ageB - ageA; // Highest age (4) first
+                }
+            });
+
+            // Animate out
+            grid.style.opacity = '0';
+            
+            setTimeout(() => {
+                // Clear grid and append in new order
+                grid.innerHTML = '';
+                sortedItems.forEach(item => grid.appendChild(item));
+                
+                // Animate in
+                grid.style.opacity = '1';
+                grid.style.transition = 'opacity 0.5s ease-in-out';
+            }, 300);
+        });
+    });
+</script>
+@endpush
 @endsection
