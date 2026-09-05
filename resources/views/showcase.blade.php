@@ -108,82 +108,90 @@
             <div class="border-t border-cbvh-gold-20 divide-y divide-cbvh-gold-20 reveal-element" style="transition-delay: 200ms;">
 
                 <!-- Brand Heritage -->
-                <div class="accordion-item" data-state="closed">
-                    <button class="accordion-trigger w-full py-6 flex items-center justify-between group">
+                <div class="accordion-item">
+                    <button class="accordion-trigger w-full py-6 flex items-center justify-between group" data-state="closed">
                         <span class="font-serif text-lg text-cbvh-ivory group-hover:text-cbvh-gold transition">Brand Heritage & Leadership</span>
-                        <span class="text-cbvh-gold transition-transform duration-300 transform group-[&[data-state=open]]:rotate-180">
+                        <span class="text-cbvh-gold transition-transform duration-300 transform group-data-[state=open]:rotate-180">
                             <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="square" stroke-linejoin="miter" stroke-width="1.5" d="M19 9l-7 7-7-7"></path></svg>
                         </span>
                     </button>
-                    <div class="accordion-content hidden pb-6">
-                        <div class="grid grid-cols-1 md:grid-cols-2 gap-y-4 gap-x-6 text-sm">
-                            <div>
-                                <span class="block text-[0.6rem] uppercase tracking-widest text-cbvh-gray mb-1">Co-founder & CEO</span>
-                                <span class="text-cbvh-ivory font-medium">Vanndy Imphan</span>
-                            </div>
-                            <div>
-                                <span class="block text-[0.6rem] uppercase tracking-widest text-cbvh-gray mb-1">Master Goldsmith</span>
-                                <span class="text-cbvh-ivory font-medium">Van Hong</span>
-                            </div>
-                            <div>
-                                <span class="block text-[0.6rem] uppercase tracking-widest text-cbvh-gray mb-1">Vice President</span>
-                                <span class="text-cbvh-ivory font-medium">Vannda Imphan</span>
-                            </div>
-                            <div>
-                                <span class="block text-[0.6rem] uppercase tracking-widest text-cbvh-gray mb-1">Established</span>
-                                <span class="text-cbvh-ivory font-medium">November 1998</span>
-                            </div>
-                            <div class="md:col-span-2">
-                                <span class="block text-[0.6rem] uppercase tracking-widest text-cbvh-gray mb-1">Global Accolades</span>
-                                <span class="text-cbvh-ivory font-medium">Top Brand 2024 by Influential Brands</span>
+                    <div class="accordion-content grid grid-rows-[0fr] transition-all duration-500 ease-in-out">
+                        <div class="overflow-hidden">
+                            <div class="pb-6">
+                                <div class="grid grid-cols-1 md:grid-cols-2 gap-y-4 gap-x-6 text-sm">
+                                    <div>
+                                        <span class="block text-[0.6rem] uppercase tracking-widest text-cbvh-gray mb-1">Co-founder & CEO</span>
+                                        <span class="text-cbvh-ivory font-medium">Vanndy Imphan</span>
+                                    </div>
+                                    <div>
+                                        <span class="block text-[0.6rem] uppercase tracking-widest text-cbvh-gray mb-1">Master Goldsmith</span>
+                                        <span class="text-cbvh-ivory font-medium">Van Hong</span>
+                                    </div>
+                                    <div>
+                                        <span class="block text-[0.6rem] uppercase tracking-widest text-cbvh-gray mb-1">Vice President</span>
+                                        <span class="text-cbvh-ivory font-medium">Vannda Imphan</span>
+                                    </div>
+                                    <div>
+                                        <span class="block text-[0.6rem] uppercase tracking-widest text-cbvh-gray mb-1">Established</span>
+                                        <span class="text-cbvh-ivory font-medium">November 1998</span>
+                                    </div>
+                                    <div class="md:col-span-2">
+                                        <span class="block text-[0.6rem] uppercase tracking-widest text-cbvh-gray mb-1">Global Accolades</span>
+                                        <span class="text-cbvh-ivory font-medium">Top Brand 2024 by Influential Brands</span>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
                 
                 <!-- Gemological Matrix -->
-                <div class="accordion-item" data-state="closed">
-                    <button class="accordion-trigger w-full py-6 flex items-center justify-between group">
+                <div class="accordion-item">
+                    <button class="accordion-trigger w-full py-6 flex items-center justify-between group" data-state="closed">
                         <span class="font-serif text-lg text-cbvh-ivory group-hover:text-cbvh-gold transition">Gemological Matrix</span>
-                        <span class="text-cbvh-gold transition-transform duration-300 transform group-[&[data-state=open]]:rotate-180">
+                        <span class="text-cbvh-gold transition-transform duration-300 transform group-data-[state=open]:rotate-180">
                             <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="square" stroke-linejoin="miter" stroke-width="1.5" d="M19 9l-7 7-7-7"></path></svg>
                         </span>
                     </button>
-                    <div class="accordion-content hidden pb-6">
-                        <div class="grid grid-cols-2 gap-y-4 gap-x-6 text-sm">
-                            <div>
-                                <span class="block text-[0.6rem] uppercase tracking-widest text-cbvh-gray mb-1">Principal Gemstone</span>
-                                <span class="text-cbvh-ivory font-medium">Unheated Royal Blue Sapphire</span>
-                            </div>
-                            <div>
-                                <span class="block text-[0.6rem] uppercase tracking-widest text-cbvh-gray mb-1">Carat Weight</span>
-                                <span class="text-cbvh-ivory font-medium">14.82 ct</span>
-                            </div>
-                            <div>
-                                <span class="block text-[0.6rem] uppercase tracking-widest text-cbvh-gray mb-1">Provenance</span>
-                                <span class="text-cbvh-ivory font-medium">Ceylon (Sri Lanka)</span>
-                            </div>
-                            <div>
-                                <span class="block text-[0.6rem] uppercase tracking-widest text-cbvh-gray mb-1">Treatment</span>
-                                <span class="text-cbvh-ivory font-medium">None</span>
-                            </div>
-                            <div class="col-span-2 mt-4 pt-4 border-t border-white/5">
-                                <span class="block text-[0.6rem] uppercase tracking-widest text-cbvh-gray mb-1">Diamond Accent</span>
-                                <span class="text-cbvh-ivory font-medium">D Flawless to VVS1</span>
-                            </div>
-                            <div>
-                                <span class="block text-[0.6rem] uppercase tracking-widest text-cbvh-gray mb-1">Total Diamond Weight</span>
-                                <span class="text-cbvh-ivory font-medium">12.45 ct</span>
-                            </div>
-                            <div>
-                                <span class="block text-[0.6rem] uppercase tracking-widest text-cbvh-gray mb-1">Cut / Clarity</span>
-                                <span class="text-cbvh-ivory font-medium">Excellent / Excellent</span>
-                            </div>
-                        </div>
-                        <div class="mt-6 aspect-video bg-white/5 p-2 flex items-center justify-center rounded-sm border border-white/10 relative overflow-hidden group/cert cursor-pointer">
-                            <img src="/images/jewelry/gemological_certificate_1786938836651.jpg" class="object-cover w-full h-full opacity-60 group-hover/cert:opacity-100 transition-opacity duration-500" alt="Certificate">
-                            <div class="absolute inset-0 flex items-center justify-center pointer-events-none">
-                                <span class="bg-black/80 px-3 py-1.5 text-[0.65rem] uppercase tracking-widest text-cbvh-ivory backdrop-blur-sm border border-white/20">View Dossier Document</span>
+                    <div class="accordion-content grid grid-rows-[0fr] transition-all duration-500 ease-in-out">
+                        <div class="overflow-hidden">
+                            <div class="pb-6">
+                                <div class="grid grid-cols-2 gap-y-4 gap-x-6 text-sm">
+                                    <div>
+                                        <span class="block text-[0.6rem] uppercase tracking-widest text-cbvh-gray mb-1">Principal Gemstone</span>
+                                        <span class="text-cbvh-ivory font-medium">Unheated Royal Blue Sapphire</span>
+                                    </div>
+                                    <div>
+                                        <span class="block text-[0.6rem] uppercase tracking-widest text-cbvh-gray mb-1">Carat Weight</span>
+                                        <span class="text-cbvh-ivory font-medium">14.82 ct</span>
+                                    </div>
+                                    <div>
+                                        <span class="block text-[0.6rem] uppercase tracking-widest text-cbvh-gray mb-1">Provenance</span>
+                                        <span class="text-cbvh-ivory font-medium">Ceylon (Sri Lanka)</span>
+                                    </div>
+                                    <div>
+                                        <span class="block text-[0.6rem] uppercase tracking-widest text-cbvh-gray mb-1">Treatment</span>
+                                        <span class="text-cbvh-ivory font-medium">None</span>
+                                    </div>
+                                    <div class="col-span-2 mt-4 pt-4 border-t border-white/5">
+                                        <span class="block text-[0.6rem] uppercase tracking-widest text-cbvh-gray mb-1">Diamond Accent</span>
+                                        <span class="text-cbvh-ivory font-medium">D Flawless to VVS1</span>
+                                    </div>
+                                    <div>
+                                        <span class="block text-[0.6rem] uppercase tracking-widest text-cbvh-gray mb-1">Total Diamond Weight</span>
+                                        <span class="text-cbvh-ivory font-medium">12.45 ct</span>
+                                    </div>
+                                    <div>
+                                        <span class="block text-[0.6rem] uppercase tracking-widest text-cbvh-gray mb-1">Cut / Clarity</span>
+                                        <span class="text-cbvh-ivory font-medium">Excellent / Excellent</span>
+                                    </div>
+                                </div>
+                                <div class="mt-6 aspect-video bg-white/5 p-2 flex items-center justify-center rounded-sm border border-white/10 relative overflow-hidden group/cert cursor-pointer">
+                                    <img src="/images/jewelry/gemological_certificate_1786938836651.jpg" class="object-cover w-full h-full opacity-60 group-hover/cert:opacity-100 transition-opacity duration-500" alt="Certificate">
+                                    <div class="absolute inset-0 flex items-center justify-center pointer-events-none">
+                                        <span class="bg-black/80 px-3 py-1.5 text-[0.65rem] uppercase tracking-widest text-cbvh-ivory backdrop-blur-sm border border-white/20">View Dossier Document</span>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -292,27 +300,21 @@
     // Toggle accordions
     document.querySelectorAll('.accordion-trigger').forEach(button => {
         button.addEventListener('click', () => {
-            const item = button.parentElement;
             const content = button.nextElementSibling;
-            const isOpen = item.dataset.state === 'open';
-
-            // Close all other accordions
-            document.querySelectorAll('.accordion-item').forEach(otherItem => {
-                if (otherItem !== item) {
-                    otherItem.dataset.state = 'closed';
-                    otherItem.querySelector('.accordion-content').classList.add('hidden');
-                }
-            });
+            const isOpen = button.dataset.state === 'open';
 
             // Toggle current
             if (isOpen) {
-                item.dataset.state = 'closed';
-                content.classList.add('hidden');
+                button.dataset.state = 'closed';
+                content.classList.remove('grid-rows-[1fr]');
+                content.classList.add('grid-rows-[0fr]');
             } else {
-                item.dataset.state = 'open';
-                content.classList.remove('hidden');
+                button.dataset.state = 'open';
+                content.classList.remove('grid-rows-[0fr]');
+                content.classList.add('grid-rows-[1fr]');
             }
         });
+    });
 </script>
 <script>
     // Discover More Interactive Slider

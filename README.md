@@ -1,58 +1,87 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+# Website Project
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+This is a Laravel-based website project utilizing Vite and Tailwind CSS.
 
-## About Laravel
+## Prerequisites
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+Before you begin, ensure you have the following installed on your new computer:
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+- **PHP**: Version 8.3 or higher.
+- **Composer**: Dependency manager for PHP.
+- **Node.js & npm**: Required for compiling frontend assets (Vite and Tailwind CSS).
+- **Git**: For version control.
+- **SQLite**: The project uses SQLite by default for its database.
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+## Installation & Setup Guide
 
-## Learning Laravel
+Follow these steps to set up the project on a new machine:
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
-
-In addition, [Laracasts](https://laracasts.com) contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
-
-You can also watch bite-sized lessons with real-world projects on [Laravel Learn](https://laravel.com/learn), where you will be guided through building a Laravel application from scratch while learning PHP fundamentals.
-
-## Agentic Development
-
-Laravel's predictable structure and conventions make it ideal for AI coding agents like Claude Code, Cursor, and GitHub Copilot. Install [Laravel Boost](https://laravel.com/docs/ai) to supercharge your AI workflow:
-
+### 1. Clone the Repository
+Clone the project to your local machine and navigate into the project directory:
 ```bash
-composer require laravel/boost --dev
-
-php artisan boost:install
+git clone <repository-url>
+cd website
 ```
 
-Boost provides your agent 15+ tools and skills that help agents build Laravel applications while following best practices.
+### 2. Install PHP Dependencies
+Install the required PHP packages using Composer:
+```bash
+composer install
+```
 
-## Contributing
+### 3. Setup Environment Configuration
+Copy the example environment file to create your local `.env` file:
+```bash
+cp .env.example .env
+```
+*(On Windows Command Prompt, use `copy .env.example .env`)*
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+### 4. Generate Application Key
+Generate a unique application key for Laravel encryption:
+```bash
+php artisan key:generate
+```
 
-## Code of Conduct
+### 5. Create and Migrate Database
+The project uses SQLite. You can create the database file and run the migrations to set up the tables:
+```bash
+# Create an empty SQLite database file
+touch database/database.sqlite
+# (On Windows, you can use: type nul > database\database.sqlite)
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+# Run the database migrations
+php artisan migrate
+```
 
-## Security Vulnerabilities
+### 6. Install Frontend Dependencies
+Install the required Node packages (Vite, Tailwind, etc.):
+```bash
+npm install
+```
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+### 7. Build Frontend Assets
+Compile the CSS and JavaScript assets:
+```bash
+# For production build
+npm run build
 
-## License
+# Alternatively, for development with hot-reloading, run:
+npm run dev
+```
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+## Running the Application Locally
+
+Once the setup is complete, you can start the Laravel development server:
+
+```bash
+php artisan serve
+```
+
+The application will be accessible in your browser, typically at `http://localhost:8000` or `http://127.0.0.1:8000`.
+
+## Quick Setup Command
+Alternatively, the project includes a custom Composer script that automates many of the setup steps. After cloning and running `composer install`, you can try running:
+```bash
+composer run setup
+```
+This script will automatically copy the `.env` file, generate the key, migrate the database, install NPM dependencies (`npm install`), and build the frontend assets (`npm run build`).
