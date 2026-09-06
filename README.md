@@ -85,3 +85,15 @@ Alternatively, the project includes a custom Composer script that automates many
 composer run setup
 ```
 This script will automatically copy the `.env` file, generate the key, migrate the database, install NPM dependencies (`npm install`), and build the frontend assets (`npm run build`).
+
+## Troubleshooting (Windows / XAMPP)
+
+If you are setting up this project on Windows (especially if you manually updated PHP in XAMPP), you might run into the following common issues:
+
+- **Missing PHP Extensions**: Laravel and Composer require several PHP extensions to be enabled in your `php.ini` file. If you manually downloaded PHP, you must rename `php.ini-development` to `php.ini` and uncomment (remove the `;`) the following extensions:
+  - `extension=zip` (Required by Composer to download and extract packages)
+  - `extension=pdo_sqlite` (Required for the SQLite database)
+  - `extension=mbstring`
+  - `extension=curl`
+  - `extension=openssl`
+  - Ensure `extension_dir = "ext"` is also uncommented.

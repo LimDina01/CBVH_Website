@@ -220,10 +220,10 @@
         <div class="flex w-full overflow-x-auto scrollbar-hide discover-slider cursor-grab active:cursor-grabbing pb-8">
             <div class="flex w-max">
             
-            @for ($i = 0; $i < 2; $i++)
+            @for ($i = 0; $i < 4; $i++)
             <div class="flex">
                 <!-- Crimson Sovereign -->
-                <a href="{{ route('collections') }}" class="block relative overflow-hidden bg-black w-[280px] md:w-[380px] aspect-[4/5] border border-white/5 hover:border-cbvh-gold-40 transition-colors duration-700 shrink-0 group/card mr-6">
+                <a href="{{ route('piece.show', 'crimson-sovereign') }}" class="block relative overflow-hidden bg-black w-[280px] md:w-[380px] aspect-[4/5] border border-white/5 hover:border-cbvh-gold-40 transition-colors duration-700 shrink-0 group/card mr-6">
                     <img src="/images/jewelry/ruby_necklace.jpg" class="absolute inset-0 w-full h-full object-cover opacity-100 group-hover/card:scale-110 transition-all duration-[1500ms] ease-out">
                     <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent pointer-events-none"></div>
                     <div class="absolute bottom-8 left-8 z-10">
@@ -233,7 +233,7 @@
                 </a>
 
                 <!-- Lumière Éternelle -->
-                <a href="{{ route('collections') }}" class="block relative overflow-hidden bg-black w-[280px] md:w-[380px] aspect-[4/5] border border-white/5 hover:border-cbvh-gold-40 transition-colors duration-700 shrink-0 group/card mr-6">
+                <a href="{{ route('piece.show', 'lumiere-eternelle') }}" class="block relative overflow-hidden bg-black w-[280px] md:w-[380px] aspect-[4/5] border border-white/5 hover:border-cbvh-gold-40 transition-colors duration-700 shrink-0 group/card mr-6">
                     <img src="/images/jewelry/pearl_bridal_ring.jpg" class="absolute inset-0 w-full h-full object-cover opacity-100 group-hover/card:scale-110 transition-all duration-[1500ms] ease-out">
                     <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent pointer-events-none"></div>
                     <div class="absolute bottom-8 left-8 z-10">
@@ -243,7 +243,7 @@
                 </a>
 
                 <!-- Aurora Radiance -->
-                <a href="{{ route('collections') }}" class="block relative overflow-hidden bg-black w-[280px] md:w-[380px] aspect-[4/5] border border-white/5 hover:border-cbvh-gold-40 transition-colors duration-700 shrink-0 group/card mr-6">
+                <a href="{{ route('piece.show', 'aurora-radiance') }}" class="block relative overflow-hidden bg-black w-[280px] md:w-[380px] aspect-[4/5] border border-white/5 hover:border-cbvh-gold-40 transition-colors duration-700 shrink-0 group/card mr-6">
                     <img src="/images/jewelry/hero_diamond_earrings_1786938763271.jpg" class="absolute inset-0 w-full h-full object-cover opacity-100 group-hover/card:scale-110 transition-all duration-[1500ms] ease-out">
                     <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent pointer-events-none"></div>
                     <div class="absolute bottom-8 left-8 z-10">
@@ -253,7 +253,7 @@
                 </a>
                 
                 <!-- Verdant Legacy -->
-                <a href="{{ route('collections') }}" class="block relative overflow-hidden bg-black w-[280px] md:w-[380px] aspect-[4/5] border border-white/5 hover:border-cbvh-gold-40 transition-colors duration-700 shrink-0 group/card mr-6">
+                <a href="{{ route('piece.show', 'verdant-legacy') }}" class="block relative overflow-hidden bg-black w-[280px] md:w-[380px] aspect-[4/5] border border-white/5 hover:border-cbvh-gold-40 transition-colors duration-700 shrink-0 group/card mr-6">
                     <img src="/images/jewelry/hero_emerald_ring_1786938499216.jpg" class="absolute inset-0 w-full h-full object-cover opacity-100 group-hover/card:scale-110 transition-all duration-[1500ms] ease-out">
                     <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent pointer-events-none"></div>
                     <div class="absolute bottom-8 left-8 z-10">
@@ -263,7 +263,7 @@
                 </a>
 
                 <!-- Empress' Enchanted -->
-                <a href="{{ route('collections') }}" class="block relative overflow-hidden bg-black w-[280px] md:w-[380px] aspect-[4/5] border border-white/5 hover:border-cbvh-gold-40 transition-colors duration-700 shrink-0 group/card mr-6">
+                <a href="{{ route('piece.show', 'empress-enchanted') }}" class="block relative overflow-hidden bg-black w-[280px] md:w-[380px] aspect-[4/5] border border-white/5 hover:border-cbvh-gold-40 transition-colors duration-700 shrink-0 group/card mr-6">
                     <img src="/images/jewelry/hero_yellow_diamond_ring_1786938510809.jpg" class="absolute inset-0 w-full h-full object-cover opacity-100 group-hover/card:scale-110 transition-all duration-[1500ms] ease-out">
                     <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent pointer-events-none"></div>
                     <div class="absolute bottom-8 left-8 z-10">
@@ -378,10 +378,10 @@
             if (!isInteracting && !isDragging) {
                 slider.scrollLeft += 1;
                 
-                // If we've scrolled past half the inner track (which contains 2 identical sets)
-                // Seamlessly snap back to the start
+                // If we've scrolled past half the inner track (which now contains 4 identical sets)
+                // Seamlessly snap back to the start (by exactly half the total track width)
                 if (slider.scrollLeft >= innerTrack.scrollWidth / 2) {
-                    slider.scrollLeft = 0;
+                    slider.scrollLeft -= innerTrack.scrollWidth / 2;
                 }
             }
             animationId = requestAnimationFrame(autoScroll);

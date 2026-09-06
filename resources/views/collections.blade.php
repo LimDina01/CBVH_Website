@@ -68,7 +68,7 @@
                     <span class="text-[0.6rem] uppercase tracking-[0.2em] text-cbvh-gold mb-3 block drop-shadow-md transition-all duration-700 group-hover:text-cbvh-gold-40">Fine Jewelry</span>
                     <h2 class="font-serif text-2xl md:text-3xl text-cbvh-ivory mb-3 group-hover:text-cbvh-gold transition-colors duration-500 drop-shadow-lg">Verdant Legacy</h2>
                     <p class="text-cbvh-gray-light text-xs md:text-sm mb-6 line-clamp-2 drop-shadow-md">Colombian emeralds of unparalleled clarity, celebrating nature's most vivid hues encased in timeless platinum.</p>
-                    <a href="#" class="inline-flex items-center space-x-3 text-[0.65rem] uppercase tracking-widest text-cbvh-ivory hover:text-cbvh-gold transition group/btn drop-shadow-md">
+                    <a href="{{ route('piece.show', 'verdant-legacy') }}" class="inline-flex items-center space-x-3 text-[0.65rem] uppercase tracking-widest text-cbvh-ivory hover:text-cbvh-gold transition group/btn drop-shadow-md">
                         <span>Discover</span>
                         <span class="w-6 h-px bg-current group-hover/btn:w-10 transition-all"></span>
                     </a>
@@ -86,7 +86,7 @@
                     <span class="text-[0.6rem] uppercase tracking-[0.2em] text-cbvh-gold mb-3 block drop-shadow-md transition-all duration-700 group-hover:text-cbvh-gold-40">Bridal & High Jewelry</span>
                     <h2 class="font-serif text-2xl md:text-3xl text-cbvh-ivory mb-3 group-hover:text-cbvh-gold transition-colors duration-500 drop-shadow-lg">Empress' Enchanted</h2>
                     <p class="text-cbvh-gray-light text-xs md:text-sm mb-6 line-clamp-2 drop-shadow-md">Rare fancy vivid yellow diamonds capturing the warmth of the sovereign sun, an emblem of enduring majesty.</p>
-                    <a href="#" class="inline-flex items-center space-x-3 text-[0.65rem] uppercase tracking-widest text-cbvh-ivory hover:text-cbvh-gold transition group/btn drop-shadow-md">
+                    <a href="{{ route('piece.show', 'empress-enchanted') }}" class="inline-flex items-center space-x-3 text-[0.65rem] uppercase tracking-widest text-cbvh-ivory hover:text-cbvh-gold transition group/btn drop-shadow-md">
                         <span>Discover</span>
                         <span class="w-6 h-px bg-current group-hover/btn:w-10 transition-all"></span>
                     </a>
@@ -104,7 +104,7 @@
                     <span class="text-[0.6rem] uppercase tracking-[0.2em] text-cbvh-gold mb-3 block drop-shadow-md transition-all duration-700 group-hover:text-cbvh-gold-40">High Jewelry</span>
                     <h2 class="font-serif text-2xl md:text-3xl text-cbvh-ivory mb-3 group-hover:text-cbvh-gold transition-colors duration-500 drop-shadow-lg">Crimson Sovereign</h2>
                     <p class="text-cbvh-gray-light text-xs md:text-sm mb-6 line-clamp-2 drop-shadow-md">A dramatic display of deep, unheated rubies encased in exquisite diamond flora, echoing royal bloodlines.</p>
-                    <a href="#" class="inline-flex items-center space-x-3 text-[0.65rem] uppercase tracking-widest text-cbvh-ivory hover:text-cbvh-gold transition group/btn drop-shadow-md">
+                    <a href="{{ route('piece.show', 'crimson-sovereign') }}" class="inline-flex items-center space-x-3 text-[0.65rem] uppercase tracking-widest text-cbvh-ivory hover:text-cbvh-gold transition group/btn drop-shadow-md">
                         <span>Discover</span>
                         <span class="w-6 h-px bg-current group-hover/btn:w-10 transition-all"></span>
                     </a>
@@ -122,7 +122,7 @@
                     <span class="text-[0.6rem] uppercase tracking-[0.2em] text-cbvh-gold mb-3 block drop-shadow-md transition-all duration-700 group-hover:text-cbvh-gold-40">Bridal Collection</span>
                     <h2 class="font-serif text-2xl md:text-3xl text-cbvh-ivory mb-3 group-hover:text-cbvh-gold transition-colors duration-500 drop-shadow-lg">Lumière Éternelle</h2>
                     <p class="text-cbvh-gray-light text-xs md:text-sm mb-6 line-clamp-2 drop-shadow-md">Flawless South Sea pearls cradled in platinum, symbolizing purity, wisdom, and an eternal vow.</p>
-                    <a href="#" class="inline-flex items-center space-x-3 text-[0.65rem] uppercase tracking-widest text-cbvh-ivory hover:text-cbvh-gold transition group/btn drop-shadow-md">
+                    <a href="{{ route('piece.show', 'lumiere-eternelle') }}" class="inline-flex items-center space-x-3 text-[0.65rem] uppercase tracking-widest text-cbvh-ivory hover:text-cbvh-gold transition group/btn drop-shadow-md">
                         <span>Discover</span>
                         <span class="w-6 h-px bg-current group-hover/btn:w-10 transition-all"></span>
                     </a>
@@ -141,7 +141,7 @@
                     <p class="text-cbvh-gray-light text-sm md:text-base leading-relaxed mb-8">
                         A cascade of light frozen in time. The Aurora Radiance collection utilizes innovative setting techniques to create a continuous curtain of D-Flawless diamonds that move with the wearer.
                     </p>
-                    <a href="#" class="inline-flex items-center space-x-3 text-[0.65rem] uppercase tracking-widest text-cbvh-ivory hover:text-cbvh-gold transition group/btn">
+                    <a href="{{ route('piece.show', 'aurora-radiance') }}" class="inline-flex items-center space-x-3 text-[0.65rem] uppercase tracking-widest text-cbvh-ivory hover:text-cbvh-gold transition group/btn">
                         <span>View the Collection</span>
                         <span class="w-8 h-px bg-current group-hover/btn:w-12 transition-all"></span>
                     </a>
