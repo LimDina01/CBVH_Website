@@ -100,13 +100,13 @@
         </button>
 
         <nav class="flex flex-col items-center text-center w-full max-w-lg mx-auto">
-            <a href="{{ route('showcase') }}" class="menu-link font-serif text-3xl md:text-5xl text-cbvh-ivory hover:text-cbvh-gold transition-colors duration-300 mb-8">Home</a>
-            <a href="{{ route('collections') }}" class="menu-link font-serif text-3xl md:text-5xl text-cbvh-ivory hover:text-cbvh-gold transition-colors duration-300 mb-8">Collections</a>
-            <a href="{{ route('atelier') }}" class="menu-link font-serif text-3xl md:text-5xl text-cbvh-ivory hover:text-cbvh-gold transition-colors duration-300 mb-8">L'Atelier</a>
-            <a href="{{ route('gemology') }}" class="menu-link font-serif text-3xl md:text-5xl text-cbvh-ivory hover:text-cbvh-gold transition-colors duration-300 mb-10">Gemology</a>
+            <a href="{{ route('showcase') }}" class="menu-link font-serif text-3xl md:text-5xl {{ request()->routeIs('showcase') ? 'text-cbvh-gold' : 'text-cbvh-ivory' }} hover:text-cbvh-gold transition-colors duration-300 mb-8">Home</a>
+            <a href="{{ route('collections') }}" class="menu-link font-serif text-3xl md:text-5xl {{ request()->routeIs('collections') ? 'text-cbvh-gold' : 'text-cbvh-ivory' }} hover:text-cbvh-gold transition-colors duration-300 mb-8">Collections</a>
+            <a href="{{ route('atelier') }}" class="menu-link font-serif text-3xl md:text-5xl {{ request()->routeIs('atelier') ? 'text-cbvh-gold' : 'text-cbvh-ivory' }} hover:text-cbvh-gold transition-colors duration-300 mb-8">L'Atelier</a>
+            <a href="{{ route('gemology') }}" class="menu-link font-serif text-3xl md:text-5xl {{ request()->routeIs('gemology') ? 'text-cbvh-gold' : 'text-cbvh-ivory' }} hover:text-cbvh-gold transition-colors duration-300 mb-10">Gemology</a>
             
             <div class="flex flex-col items-center w-full">
-                <a href="{{ route('about') }}" class="menu-link font-serif text-3xl md:text-5xl text-cbvh-ivory hover:text-cbvh-gold transition-colors duration-300 mb-6">About Maison</a>
+                <a href="{{ route('about') }}" class="menu-link font-serif text-3xl md:text-5xl {{ request()->routeIs('about') ? 'text-cbvh-gold' : 'text-cbvh-ivory' }} hover:text-cbvh-gold transition-colors duration-300 mb-6">About Maison</a>
                 
                 <!-- Sub-links visual group -->
                 <div class="flex flex-col items-center space-y-5">

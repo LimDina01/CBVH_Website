@@ -18,18 +18,40 @@
     </section>
 
     <!-- Filter/Sort Bar -->
-    <div class="px-6 md:px-12 max-w-[1600px] mx-auto mb-12 flex flex-col md:flex-row justify-between items-center border-b border-cbvh-gold-20 pb-4 print:hidden reveal-element" style="transition-delay: 100ms;">
-        <div class="flex space-x-6 mb-4 md:mb-0">
-            <button class="filter-btn text-xs uppercase tracking-widest text-cbvh-gold border-b border-cbvh-gold pb-1" data-filter="all">All Collections</button>
-            <button class="filter-btn text-xs uppercase tracking-widest text-cbvh-gray hover:text-cbvh-ivory transition border-b border-transparent pb-1" data-filter="high-jewelry">High Jewelry</button>
-            <button class="filter-btn text-xs uppercase tracking-widest text-cbvh-gray hover:text-cbvh-ivory transition border-b border-transparent pb-1" data-filter="bridal">Bridal</button>
+    <div class="px-6 md:px-12 max-w-[1600px] mx-auto mb-12 flex flex-col md:flex-row justify-between items-center border-b border-cbvh-gold-20 pb-4 print:hidden reveal-element gap-4 md:gap-0" style="transition-delay: 100ms;">
+        
+        <!-- Filters -->
+        <div class="w-full flex-1 min-w-0 md:mr-8 mb-4 md:mb-0 relative">
+            <!-- Fade edges for scroll indication -->
+            <div class="absolute right-0 top-0 bottom-0 w-8 bg-gradient-to-l from-cbvh-obsidian to-transparent z-10 pointer-events-none md:hidden"></div>
+            
+            <div class="flex items-center space-x-5 md:space-x-6 w-full overflow-x-auto [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none] snap-x pb-1 px-1">
+                <button class="filter-btn shrink-0 snap-start text-[0.65rem] md:text-xs uppercase tracking-widest text-cbvh-gold border-b border-cbvh-gold pb-1" data-filter="all">All</button>
+                <button class="filter-btn shrink-0 snap-start text-[0.65rem] md:text-xs uppercase tracking-widest text-cbvh-gray hover:text-cbvh-ivory transition border-b border-transparent pb-1" data-filter="high-jewelry">High Jewelry</button>
+                <button class="filter-btn shrink-0 snap-start text-[0.65rem] md:text-xs uppercase tracking-widest text-cbvh-gray hover:text-cbvh-ivory transition border-b border-transparent pb-1" data-filter="bridal">Bridal</button>
+            </div>
         </div>
-        <div class="flex items-center space-x-4">
-            <span class="text-xs uppercase tracking-widest text-cbvh-gray">Sort By</span>
-            <select id="sort-select" class="bg-transparent border border-white/20 text-cbvh-ivory text-xs uppercase tracking-widest p-2 focus:outline-none focus:border-cbvh-gold transition cursor-pointer">
-                <option value="latest" class="bg-cbvh-onyx">Latest Arrivals</option>
-                <option value="heritage" class="bg-cbvh-onyx">Heritage Pieces</option>
-            </select>
+
+        <!-- Search & Sort By -->
+        <div class="flex items-center space-x-3 shrink-0 w-full md:w-auto justify-end border-t border-white/10 pt-4 md:border-t-0 md:pt-0">
+            
+            <!-- Expandable Search -->
+            <div class="relative flex items-center shrink-0 h-full border-r border-white/10 pr-3">
+                <button id="search-toggle" class="z-20 w-5 h-5 flex items-center justify-center text-cbvh-gray hover:text-cbvh-ivory transition-colors cursor-pointer absolute left-0">
+                    <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="square" stroke-linejoin="miter" stroke-width="1.5" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg>
+                </button>
+                <input type="text" id="search-input" placeholder="SEARCH..." 
+                    class="w-0 opacity-0 transition-all duration-500 ease-out bg-transparent border-b border-transparent focus:border-cbvh-gold text-cbvh-ivory text-[0.65rem] md:text-xs tracking-widest pl-7 py-1 outline-none placeholder-cbvh-gray/50 uppercase">
+            </div>
+
+            <!-- Sort By -->
+            <div class="flex items-center space-x-2">
+                <span class="text-xs uppercase tracking-widest text-cbvh-gray">Sort By</span>
+                <select id="sort-select" class="bg-transparent border border-white/20 text-cbvh-ivory text-xs uppercase tracking-widest p-2 focus:outline-none focus:border-cbvh-gold transition cursor-pointer">
+                    <option value="latest" class="bg-cbvh-onyx">Latest Arrivals</option>
+                    <option value="heritage" class="bg-cbvh-onyx">Heritage Pieces</option>
+                </select>
+            </div>
         </div>
     </div>
 
@@ -158,13 +180,71 @@
     document.addEventListener('DOMContentLoaded', () => {
         const filterBtns = document.querySelectorAll('.filter-btn');
         const sortSelect = document.getElementById('sort-select');
+        const searchInput = document.getElementById('search-input');
         const grid = document.getElementById('collections-grid');
         const items = Array.from(document.querySelectorAll('.collection-item'));
 
-        // Filtering Logic
+        let activeCategory = 'all';
+        let searchQuery = '';
+
+        function applyFilters() {
+            items.forEach(item => {
+                const matchesCategory = (activeCategory === 'all' || item.dataset.category === activeCategory);
+                const matchesSearch = item.innerText.toLowerCase().includes(searchQuery);
+                
+                if (matchesCategory && matchesSearch) {
+                    if (item.style.display === 'none') {
+                        item.style.display = '';
+                        item.style.opacity = '0';
+                        setTimeout(() => {
+                            item.style.transition = 'opacity 0.5s ease-in-out';
+                            item.style.opacity = '1';
+                        }, 50);
+                    }
+                } else {
+                    item.style.display = 'none';
+                    item.style.opacity = '0';
+                }
+            });
+        }
+
+        // Search UI Toggle Logic
+        const searchToggle = document.getElementById('search-toggle');
+        if (searchToggle && searchInput) {
+            searchToggle.addEventListener('click', () => {
+                if (searchInput.classList.contains('w-0')) {
+                    searchInput.classList.remove('w-0', 'opacity-0');
+                    searchInput.classList.add('w-32', 'md:w-56', 'opacity-100', 'border-cbvh-gold');
+                    searchToggle.classList.add('text-cbvh-gold');
+                    searchInput.focus();
+                } else if (searchInput.value === '') {
+                    searchInput.classList.add('w-0', 'opacity-0');
+                    searchInput.classList.remove('w-32', 'md:w-56', 'opacity-100', 'border-cbvh-gold');
+                    searchToggle.classList.remove('text-cbvh-gold');
+                }
+            });
+
+            // Close on blur if empty
+            searchInput.addEventListener('blur', () => {
+                if (searchInput.value === '') {
+                    searchInput.classList.add('w-0', 'opacity-0');
+                    searchInput.classList.remove('w-32', 'md:w-56', 'opacity-100', 'border-cbvh-gold');
+                    searchToggle.classList.remove('text-cbvh-gold');
+                }
+            });
+        }
+
+        // Search Filtering Logic
+        if (searchInput) {
+            searchInput.addEventListener('input', (e) => {
+                searchQuery = e.target.value.toLowerCase();
+                applyFilters();
+            });
+        }
+
+        // Category Filtering Logic
         filterBtns.forEach(btn => {
             btn.addEventListener('click', () => {
-                // Update active button styling
                 filterBtns.forEach(b => {
                     b.classList.remove('text-cbvh-gold', 'border-cbvh-gold');
                     b.classList.add('text-cbvh-gray', 'border-transparent');
@@ -172,22 +252,8 @@
                 btn.classList.remove('text-cbvh-gray', 'border-transparent');
                 btn.classList.add('text-cbvh-gold', 'border-cbvh-gold');
 
-                const filter = btn.dataset.filter;
-                
-                // Show/Hide Items
-                items.forEach(item => {
-                    if (filter === 'all' || item.dataset.category === filter) {
-                        item.style.display = '';
-                        // Small animation pop when shown
-                        item.style.opacity = '0';
-                        setTimeout(() => {
-                            item.style.transition = 'opacity 0.5s ease-in-out';
-                            item.style.opacity = '1';
-                        }, 50);
-                    } else {
-                        item.style.display = 'none';
-                    }
-                });
+                activeCategory = btn.dataset.filter;
+                applyFilters();
             });
         });
 
@@ -206,15 +272,12 @@
                 }
             });
 
-            // Animate out
             grid.style.opacity = '0';
             
             setTimeout(() => {
-                // Clear grid and append in new order
                 grid.innerHTML = '';
                 sortedItems.forEach(item => grid.appendChild(item));
                 
-                // Animate in
                 grid.style.opacity = '1';
                 grid.style.transition = 'opacity 0.5s ease-in-out';
             }, 300);

@@ -18,8 +18,11 @@ document.addEventListener('DOMContentLoaded', () => {
         const mediaContainer = document.getElementById('media-container');
         if (mediaContainer) {
             mediaContainer.addEventListener('mouseenter', () => {
-                cursor.classList.remove('opacity-0');
-                cursorDot.classList.remove('opacity-0');
+                // Only show if the device has a real mouse
+                if (window.matchMedia('(hover: hover)').matches) {
+                    cursor.classList.remove('opacity-0');
+                    cursorDot.classList.remove('opacity-0');
+                }
             });
             mediaContainer.addEventListener('mouseleave', () => {
                 cursor.classList.add('opacity-0');
@@ -72,9 +75,12 @@ document.addEventListener('DOMContentLoaded', () => {
     const zoomLoupeImg = document.getElementById('zoom-loupe-img');
 
     if (macroContainer && mainImg && zoomLoupe && zoomLoupeImg) {
+        // Helper to check if device has a real mouse (prevents iPad tap-to-zoom)
+        const isHoverDevice = () => window.innerWidth > 768 && window.matchMedia('(hover: hover)').matches;
+
         macroContainer.addEventListener('mouseenter', () => {
-            // Only show zoom on desktop
-            if (window.innerWidth > 768) {
+            // Only show zoom on desktop with real cursor
+            if (isHoverDevice()) {
                 zoomLoupe.classList.remove('hidden');
             }
         });
@@ -84,7 +90,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
 
         macroContainer.addEventListener('mousemove', (e) => {
-            if (window.innerWidth <= 768) return;
+            if (!isHoverDevice()) return;
             
             const rect = macroContainer.getBoundingClientRect();
             const x = e.clientX - rect.left;
