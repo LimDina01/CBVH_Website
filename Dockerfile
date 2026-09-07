@@ -1,9 +1,10 @@
-FROM composer:2 AS vendor
+FROM php:8.3-cli AS vendor
 WORKDIR /app
+COPY --from=composer:2 /usr/bin/composer /usr/bin/composer
+RUN apt-get update && apt-get install -y zip unzip
 COPY composer.json composer.lock ./
 # Install dependencies without executing scripts (like artisan) since .env isn't present yet
-RUN composer install --no-dev --no-interaction --prefer-dist --ignore-platform-reqs --no-scripts
-
+RUN composer install --no-dev --no-interaction --prefer-dist --no-scripts
 FROM node:20 AS frontend
 WORKDIR /app
 COPY package.json package-lock.json ./
@@ -11,7 +12,7 @@ RUN npm ci
 COPY . .
 RUN npm run build
 
-FROM php:8.3-apache
+FROM php:8.4-apache
 WORKDIR /var/www/html
 
 # 1. Enable Apache mod_rewrite for Laravel routing
