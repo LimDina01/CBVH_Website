@@ -25,18 +25,18 @@
             <!-- Fade edges for scroll indication -->
             <div class="absolute right-0 top-0 bottom-0 w-8 bg-gradient-to-l from-cbvh-obsidian to-transparent z-10 pointer-events-none md:hidden"></div>
             
-            <div class="flex items-center space-x-5 md:space-x-6 w-full overflow-x-auto [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none] snap-x pb-1 px-1">
+            <div class="flex items-center space-x-5 md:space-x-6 w-full overflow-x-auto [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none] snap-x pt-2 pb-1 px-1">
                 <button class="filter-btn shrink-0 snap-start text-[0.65rem] md:text-xs uppercase tracking-widest text-cbvh-gold border-b border-cbvh-gold pb-1" data-filter="all">All</button>
                 <button class="filter-btn shrink-0 snap-start text-[0.65rem] md:text-xs uppercase tracking-widest text-cbvh-gray hover:text-cbvh-ivory transition border-b border-transparent pb-1" data-filter="high-jewelry">High Jewelry</button>
                 <button class="filter-btn shrink-0 snap-start text-[0.65rem] md:text-xs uppercase tracking-widest text-cbvh-gray hover:text-cbvh-ivory transition border-b border-transparent pb-1" data-filter="bridal">Bridal</button>
-            </div>
+</div>
         </div>
 
         <!-- Search & Sort By -->
-        <div class="flex items-center space-x-3 shrink-0 w-full md:w-auto justify-end border-t border-white/10 pt-4 md:border-t-0 md:pt-0">
+        <div class="flex items-center justify-between md:justify-end md:space-x-3 shrink-0 w-full md:w-auto border-t border-white/10 pt-4 md:border-t-0 md:pt-0">
             
             <!-- Expandable Search -->
-            <div class="relative flex items-center shrink-0 h-full border-r border-white/10 pr-3">
+            <div class="relative flex items-center shrink-0 h-full md:border-r md:border-white/10 md:pr-3">
                 <button id="search-toggle" class="z-20 w-5 h-5 flex items-center justify-center text-cbvh-gray hover:text-cbvh-ivory transition-colors cursor-pointer absolute left-0">
                     <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="square" stroke-linejoin="miter" stroke-width="1.5" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg>
                 </button>
@@ -183,6 +183,50 @@
         const searchInput = document.getElementById('search-input');
         const grid = document.getElementById('collections-grid');
         const items = Array.from(document.querySelectorAll('.collection-item'));
+
+        // Filter drag-to-scroll for desktop
+        const filterContainer = filterBtns.length > 0 ? filterBtns[0].parentElement : null;
+        if (filterContainer) {
+            let isDown = false;
+            let startX;
+            let scrollLeft;
+            let hasDragged = false;
+
+            filterContainer.classList.add('cursor-grab');
+            
+            filterContainer.addEventListener('mousedown', (e) => {
+                isDown = true;
+                hasDragged = false;
+                filterContainer.classList.add('cursor-grabbing');
+                filterContainer.classList.remove('cursor-grab');
+                startX = e.pageX - filterContainer.offsetLeft;
+                scrollLeft = filterContainer.scrollLeft;
+            });
+            
+            window.addEventListener('mouseup', () => {
+                if (isDown) {
+                    isDown = false;
+                    filterContainer.classList.remove('cursor-grabbing');
+                    filterContainer.classList.add('cursor-grab');
+                }
+            });
+            
+            filterContainer.addEventListener('mousemove', (e) => {
+                if (!isDown) return;
+                e.preventDefault();
+                const x = e.pageX - filterContainer.offsetLeft;
+                const walk = (x - startX) * 2;
+                if (Math.abs(walk) > 5) hasDragged = true;
+                filterContainer.scrollLeft = scrollLeft - walk;
+            });
+            
+            filterContainer.addEventListener('click', (e) => {
+                if (hasDragged) {
+                    e.preventDefault();
+                    e.stopPropagation();
+                }
+            }, true);
+        }
 
         let activeCategory = 'all';
         let searchQuery = '';
