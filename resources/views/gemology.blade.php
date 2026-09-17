@@ -79,10 +79,10 @@
             </div>
 
             <!-- Matrix Content -->
-            <div class="lg:col-span-8 relative min-h-[400px]">
+            <div class="lg:col-span-8 grid">
                 
                 <!-- Sapphire Info -->
-                <div id="gem-sapphire" class="gem-content absolute inset-0 opacity-100 transition-opacity duration-700 pointer-events-auto">
+                <div id="gem-sapphire" class="gem-content col-start-1 row-start-1 opacity-100 transition-opacity duration-700 pointer-events-auto">
                     <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
                         <div>
                             <h4 class="font-serif text-3xl text-cbvh-ivory mb-6">The Royal Blue Standard</h4>
@@ -111,7 +111,7 @@
                 </div>
 
                 <!-- Emerald Info -->
-                <div id="gem-emerald" class="gem-content absolute inset-0 opacity-0 transition-opacity duration-700 pointer-events-none">
+                <div id="gem-emerald" class="gem-content col-start-1 row-start-1 opacity-0 transition-opacity duration-700 pointer-events-none">
                     <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
                         <div>
                             <h4 class="font-serif text-3xl text-cbvh-ivory mb-6">The Jardin of Colombia</h4>
@@ -140,7 +140,7 @@
                 </div>
 
                 <!-- Diamond Info -->
-                <div id="gem-diamond" class="gem-content absolute inset-0 opacity-0 transition-opacity duration-700 pointer-events-none">
+                <div id="gem-diamond" class="gem-content col-start-1 row-start-1 opacity-0 transition-opacity duration-700 pointer-events-none">
                     <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
                         <div>
                             <h4 class="font-serif text-3xl text-cbvh-ivory mb-6">Flawless Brilliance</h4>
