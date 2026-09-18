@@ -24,8 +24,8 @@
 
 
 
-        <!-- Media Container -->
-        <div class="w-full h-[50vh] md:h-full relative flex items-center justify-center overflow-hidden cursor-crosshair transition-all duration-500" id="media-container">
+        <!-- Media Container (Note: `cursor-crosshair` class was disabled for hover state) -->
+        <div class="w-full h-[50vh] md:h-full relative flex items-center justify-center overflow-hidden cursor-none transition-all duration-500" id="media-container">
             
             <div class="absolute top-6 right-6 z-40 print:hidden">
                 <button class="w-8 h-8 rounded-full border border-white/20 flex items-center justify-center text-white/50 hover:text-white hover:border-cbvh-gold transition bg-black/30 backdrop-blur-sm" id="fullscreen-btn" title="Toggle Fullscreen">

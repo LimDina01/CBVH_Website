@@ -15,9 +15,11 @@
 </head>
 <body class="bg-cbvh-obsidian text-cbvh-ivory font-sans antialiased min-h-screen flex flex-col selection:bg-cbvh-gold/30 selection:text-white overflow-x-hidden w-full max-w-full relative">
 
-    <!-- Custom Cursor -->
+    <!-- Custom Cursor (Disabled for now) -->
+    <!--
     <div id="custom-cursor" class="fixed w-6 h-6 border border-cbvh-gold rounded-full pointer-events-none z-[100] transition-transform duration-100 ease-out hidden md:block opacity-0 mix-blend-difference"></div>
     <div id="custom-cursor-dot" class="fixed w-1.5 h-1.5 bg-cbvh-gold rounded-full pointer-events-none z-[100] transition-transform duration-75 ease-out hidden md:block opacity-0"></div>
+    -->
 
     <!-- Luxury Navigation -->
     <header class="fixed top-0 w-full z-50 glass-panel border-b border-cbvh-gold-20 border-t-0 border-l-0 border-r-0 transition-all duration-300 print:hidden" id="main-nav">

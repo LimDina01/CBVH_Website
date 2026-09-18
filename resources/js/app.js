@@ -1,6 +1,6 @@
 document.addEventListener('DOMContentLoaded', () => {
-    
-    // --- Custom Cursor ---
+    /*
+    // --- Custom Cursor (Disabled for now) ---
     const cursor = document.getElementById('custom-cursor');
     const cursorDot = document.getElementById('custom-cursor-dot');
     
@@ -30,6 +30,7 @@ document.addEventListener('DOMContentLoaded', () => {
             });
         }
     }
+    */
 
     // --- Media Gallery Switcher ---
     const tabs = document.querySelectorAll('.gallery-tab');
