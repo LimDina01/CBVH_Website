@@ -61,7 +61,7 @@
             
             <!-- Collection 1: Romduol (Large featured) -->
             <div class="collection-item md:col-span-2 group relative overflow-hidden bg-cbvh-onyx border border-white/5 hover:border-cbvh-gold-40 transition-colors duration-700 h-[60vh] md:h-[70vh] reveal-element" data-category="high-jewelry" data-age="2">
-                <img src="/images/jewelry/hero_sapphire_necklace_1786938484500.jpg" alt="The Romduol Collection" class="absolute inset-0 w-full h-full object-cover opacity-90 group-hover:scale-105 group-hover:opacity-100 transition-all duration-[2000ms] ease-out">
+                <img src="/images/jewelry/romdoul_jewelry.jpg" alt="The Romduol Collection" class="absolute inset-0 w-full h-full object-cover opacity-90 group-hover:scale-105 group-hover:opacity-100 transition-all duration-[2000ms] ease-out">
                 <!-- Base Gradient -->
                 <div class="absolute inset-x-0 bottom-0 h-2/3 bg-gradient-to-t from-cbvh-obsidian/70 via-cbvh-obsidian/40 to-transparent pointer-events-none transition-opacity duration-700"></div>
                 <!-- Darker Hover Gradient for Readability (Always on for Mobile) -->

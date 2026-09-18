@@ -51,14 +51,14 @@
                 </div>
             </div>
 
-            <!-- Right Column: Specifications & Concierge -->
+            <!-- Right Column: Specifications & Support -->
             <div class="md:col-span-5 reveal-element" style="transition-delay: 300ms;">
                 
                 <!-- Spec Box -->
                 <div class="border border-cbvh-gold-40 bg-black/40 p-8 md:p-10 relative overflow-hidden group">
                     <div class="absolute inset-0 bg-cbvh-gold/5 opacity-0 group-hover:opacity-100 transition duration-700 pointer-events-none"></div>
                     
-                    <h3 class="text-xs uppercase tracking-[0.3em] text-cbvh-gold mb-8 border-b border-white/10 pb-4">Gemological Dossier</h3>
+                    <h3 class="text-xs uppercase tracking-[0.3em] text-cbvh-gold mb-8 border-b border-white/10 pb-4">Gemological Archive</h3>
                     
                     <ul class="space-y-6">
                         <li class="flex justify-between items-start border-b border-white/5 pb-4">
@@ -90,7 +90,7 @@
                         </button>
                         <button onclick="launchTelegram('INQ-{{ Str::upper(Str::slug($piece['name'])) }}', '{{ addslashes($piece['name']) }}')" class="w-full py-3 border border-cbvh-gold-40 hover:border-cbvh-gold text-cbvh-gray hover:text-cbvh-ivory transition uppercase tracking-[0.15em] text-[0.6rem] flex items-center justify-center gap-3">
                             <svg class="w-4 h-4 text-cbvh-gold" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm5.894 8.221l-1.97 9.28c-.145.658-.537.818-1.084.508l-3-2.21-1.446 1.394c-.14.18-.357.295-.6.295-.002 0-.003 0-.005 0l.213-3.054 5.56-5.022c.24-.213-.054-.334-.373-.121l-6.869 4.326-2.96-.924c-.64-.203-.658-.64.135-.954l11.566-4.458c.538-.196 1.006.128.832.94z"/></svg>
-                            <span>Telegram Concierge</span>
+                            <span>Telegram Support</span>
                         </button>
                     </div>
 
@@ -111,7 +111,7 @@
             <!-- fallback to same image since we might not have _alt -->
             <img src="{{ $piece['image'] }}" style="transform: scale(1.5) rotate(5deg)" class="w-full h-full object-cover opacity-60 group-hover:scale-[1.6] group-hover:opacity-100 transition-all duration-1000 grayscale-[30%] group-hover:grayscale-0">
             <div class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition duration-500 bg-black/20">
-                <span class="text-xs uppercase tracking-widest text-white backdrop-blur-md bg-black/30 px-4 py-2 border border-white/20">View Atelier Process</span>
+                <span class="text-xs uppercase tracking-widest text-white backdrop-blur-md bg-black/30 px-4 py-2 border border-white/20">View Craftsmanship Process</span>
             </div>
         </div>
     </section>

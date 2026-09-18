@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('title', "L'Atelier | CBVH Haute Joaillerie")
+@section('title', "Craftsmanship | CBVH Haute Joaillerie")
 
 @section('content')
 <div class="w-full bg-cbvh-obsidian relative selection:bg-cbvh-gold/30 selection:text-white">
@@ -16,10 +16,10 @@
         <div class="relative z-10 text-center px-6 max-w-4xl mx-auto mt-24">
             <span class="text-[0.65rem] uppercase tracking-[0.4em] text-cbvh-gold mb-6 block drop-shadow-md">The Sanctum of Creation</span>
             <h1 class="font-serif text-5xl md:text-8xl font-light text-cbvh-ivory mb-8 gold-shimmer drop-shadow-lg">
-                L'Atelier
+                Craftsmanship
             </h1>
             <p class="text-cbvh-gray-light font-light text-sm md:text-lg leading-relaxed max-w-2xl mx-auto drop-shadow">
-                Where raw elements of the earth are transformed into masterpieces of human ingenuity. Step inside the workshops of Maison CBVH.
+                Where raw elements of the earth are transformed into masterpieces of human ingenuity. Step inside the workshops of CBVH.
             </p>
         </div>
         
@@ -35,13 +35,13 @@
         <div class="order-2 md:order-1 relative group">
             <div class="absolute inset-0 bg-cbvh-gold/10 -translate-x-4 translate-y-4 md:-translate-x-6 md:translate-y-6 transition-transform duration-500 group-hover:translate-x-0 group-hover:translate-y-0"></div>
             <!-- Reusing atelier craftsmanship image -->
-            <img src="/images/jewelry/atelier_craftsmanship_1786938818853.jpg" alt="Craftsmanship detail" class="relative z-10 w-full h-auto object-cover grayscale-[40%] group-hover:grayscale-0 transition-all duration-700">
+            <img src="/images/jewelry/cbvh_craftsman.jpg" alt="Craftsmanship detail" class="relative z-10 w-full h-auto object-cover grayscale-[40%] group-hover:grayscale-0 transition-all duration-700">
         </div>
         <div class="order-1 md:order-2">
             <span class="text-[0.65rem] uppercase tracking-[0.2em] text-cbvh-gold mb-4 block">Chapter I</span>
             <h2 class="font-serif text-3xl md:text-5xl text-cbvh-ivory mb-6 leading-tight">A Lineage of Masters</h2>
             <p class="text-cbvh-gray text-sm md:text-base leading-relaxed mb-6 font-light">
-                The high jewelry atelier is a realm of absolute precision. Here, the ancestral knowledge of Cambodian goldsmithing is passed down from master to apprentice, preserving techniques that have defined our heritage for over 27 years.
+                The high jewelry workshop is a realm of absolute precision. Here, the ancestral knowledge of Cambodian goldsmithing is passed down from master to apprentice, preserving techniques that have defined our heritage for over 27 years.
             </p>
             <p class="text-cbvh-gray text-sm md:text-base leading-relaxed font-light">
                 Every artisan at CBVH undergoes years of rigorous training before ever touching a high jewelry piece. It is a dedication to excellence that ensures perfection in every millimeter.

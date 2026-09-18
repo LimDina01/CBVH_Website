@@ -11,11 +11,11 @@
         <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
             <div class="relative z-10">
                 <span class="text-[0.65rem] uppercase tracking-[0.4em] text-cbvh-gold mb-6 block">The Pursuit of Perfection</span>
-                <h1 class="font-serif text-5xl md:text-7xl font-light text-cbvh-ivory mb-8 gold-shimmer">
+                <h1 class="font-serif text-5xl md:text-7xl font-light text-cbvh-ivory pb-2 mb-6 leading-tight gold-shimmer">
                     Gemology
                 </h1>
                 <p class="text-cbvh-gray font-light text-sm md:text-base leading-relaxed mb-6">
-                    Maison CBVH is uncompromising in its sourcing. We travel the globe to uncover the Earth's rarest treasures—from the legendary mines of Mogok and Ceylon to the vibrant emerald deposits of Colombia.
+                    CBVH is uncompromising in its sourcing. We travel the globe to uncover the Earth's rarest treasures—from the legendary mines of Mogok and Ceylon to the vibrant emerald deposits of Colombia.
                 </p>
                 <p class="text-cbvh-gray font-light text-sm md:text-base leading-relaxed">
                     Only a fraction of the world's gemstones meet our rigorous standards for color, clarity, cut, and carat weight.
@@ -182,12 +182,12 @@
             // Remove active state from all tabs
             document.querySelectorAll('.gem-tab').forEach(t => {
                 t.classList.remove('active', 'border-cbvh-gold', 'text-cbvh-gold');
-                t.classList.add('border-transparent', 'text-cbvh-gray');
+                t.classList.add('border-transparent', 'text-cbvh-gray', 'hover:text-cbvh-ivory', 'hover:border-white/20');
             });
             
             // Add active state to clicked tab
             this.classList.add('active', 'border-cbvh-gold', 'text-cbvh-gold');
-            this.classList.remove('border-transparent', 'text-cbvh-gray');
+            this.classList.remove('border-transparent', 'text-cbvh-gray', 'hover:text-cbvh-ivory', 'hover:border-white/20');
             
             // Hide all content
             document.querySelectorAll('.gem-content').forEach(content => {

@@ -3,8 +3,8 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="CBVH Haute Joaillerie - Exclusive high jewelry dossier and private showcase.">
-    <title>@yield('title', 'CBVH Haute Joaillerie')</title>
+    <meta name="description" content="CBVH Haute Joaillerie - Exclusive high jewelry archive and private showcase.">
+    <title>@yield('title', 'CHEANG BAK VAN HONG JEWELRY')</title>
 
     <!-- Vite Styles and Scripts -->
     @vite(['resources/css/app.css', 'resources/js/app.js'])
@@ -15,11 +15,16 @@
 </head>
 <body class="bg-cbvh-obsidian text-cbvh-ivory font-sans antialiased min-h-screen flex flex-col selection:bg-cbvh-gold/30 selection:text-white overflow-x-hidden w-full max-w-full relative">
 
-    <!-- Custom Cursor (Disabled for now) -->
-    <!--
-    <div id="custom-cursor" class="fixed w-6 h-6 border border-cbvh-gold rounded-full pointer-events-none z-[100] transition-transform duration-100 ease-out hidden md:block opacity-0 mix-blend-difference"></div>
-    <div id="custom-cursor-dot" class="fixed w-1.5 h-1.5 bg-cbvh-gold rounded-full pointer-events-none z-[100] transition-transform duration-75 ease-out hidden md:block opacity-0"></div>
-    -->
+    <!-- Top Progress Bar Loader -->
+    <div id="top-progress-bar" class="fixed top-0 left-0 h-1 bg-cbvh-gold z-[10000] transition-all duration-300 ease-out w-0 opacity-0 pointer-events-none shadow-[0_0_8px_#F8B803]"></div>
+
+    <!-- Global Page Transition Loader -->
+    <div id="page-transition-loader" class="fixed inset-0 bg-cbvh-obsidian z-[9999] flex flex-col items-center justify-center transition-opacity duration-500 pointer-events-none opacity-0">
+        <h2 class="font-serif text-3xl tracking-[0.2em] text-cbvh-gold font-light animate-pulse text-center px-4">CBVH</h2>
+        <span class="block text-[0.55rem] md:text-[0.6rem] uppercase tracking-[0.2em] text-cbvh-ivory mt-2 font-medium animate-pulse">CHEANG BAK VAN HONG JEWELRY</span>
+    </div>
+
+    <!-- Custom Cursor (Disabled globally, handled locally in showcase) -->
 
     <!-- Luxury Navigation -->
     <header class="fixed top-0 w-full z-50 glass-panel border-b border-cbvh-gold-20 border-t-0 border-l-0 border-r-0 transition-all duration-300 print:hidden" id="main-nav">
@@ -37,13 +42,13 @@
 
             <!-- Center: Brand Crest / Logo -->
             <a href="{{ route('showcase') }}" class="absolute left-1/2 -translate-x-1/2 text-center group">
-                <h1 class="font-serif text-3xl md:text-4xl tracking-[0.15em] font-light text-cbvh-ivory group-hover:gold-shimmer transition-all duration-500">CBVH</h1>
-                <span class="block text-[0.6rem] uppercase tracking-[0.3em] text-cbvh-gray mt-1 font-medium">Haute Joaillerie</span>
+                <h1 class="font-serif text-3xl md:text-4xl tracking-[0.15em] font-light text-cbvh-gold group-hover:gold-shimmer transition-all duration-500">CBVH</h1>
+                <span class="block text-[0.55rem] md:text-[0.6rem] uppercase tracking-[0.2em] text-cbvh-ivory mt-1 font-medium transition-colors duration-500">CHEANG BAK VAN HONG JEWELRY</span>
             </a>
 
-            <!-- Right: Concierge -->
+            <!-- Right: Appointments -->
             <button onclick="openAppointmentModal()" class="flex items-center space-x-3 text-cbvh-ivory hover:text-cbvh-gold transition">
-                <span class="text-xs uppercase tracking-[0.2em] font-medium hidden md:block">Concierge</span>
+                <span class="text-xs uppercase tracking-[0.2em] font-medium hidden md:block">Appointments</span>
                 <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="square" stroke-linejoin="miter" stroke-width="1.5" d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z"></path></svg>
             </button>
         </div>
@@ -58,16 +63,16 @@
     <footer id="footer" class="border-t border-cbvh-gold-20 py-16 px-6 md:px-12 relative overflow-hidden bg-cbvh-onyx print:hidden">
         <div class="max-w-[1600px] mx-auto grid grid-cols-1 md:grid-cols-3 gap-12 text-center md:text-left">
             <div>
-                <h3 class="font-serif text-2xl mb-6 text-cbvh-ivory">Maison CBVH</h3>
+                <h3 class="font-serif text-2xl mb-6 text-cbvh-ivory">CBVH</h3>
                 <p class="text-cbvh-gray text-sm leading-relaxed max-w-sm mx-auto md:mx-0">
-                    Purveyors of the world's most exceptional high jewelry and rare gemological specimens. Exclusively available via private salon viewing.
+                    Purveyors of the world's most exceptional high jewelry and rare gemological specimens. Exclusively available via private showroom viewing.
                 </p>
                 <div class="mt-6">
                     <a href="{{ route('about') }}" class="text-cbvh-gold uppercase tracking-[0.2em] text-xs font-semibold hover:text-cbvh-ivory transition">Discover Our Heritage &rarr;</a>
                 </div>
             </div>
             <div>
-                <h4 class="text-xs uppercase tracking-[0.2em] font-semibold mb-6 text-cbvh-gold">Contact & Salons</h4>
+                <h4 class="text-xs uppercase tracking-[0.2em] font-semibold mb-6 text-cbvh-gold">Contact & Showrooms</h4>
                 <ul class="space-y-4 text-sm text-cbvh-gray">
                     <li><span class="text-cbvh-ivory block mb-1">Headquarters / Main Store</span>
                     A10-A15, St. Boeung Kok Development Area R1, Village 1,<br>Sangkat Srah Chak, Khan Daun Penh, Phnom Penh 12253</li>
@@ -80,13 +85,13 @@
                 <ul class="space-y-4 text-sm text-cbvh-gray">
                     <li><span class="text-cbvh-ivory block mb-1">Business Hours</span>
                     Monday to Sunday, 8:00 AM - 5:00 PM</li>
-                    <li class="pt-2"><span class="text-cbvh-ivory block mb-1">Concierge Lines</span>
+                    <li class="pt-2"><span class="text-cbvh-ivory block mb-1">Contact Lines</span>
                     012 557 144</li>
                 </ul>
             </div>
         </div>
         <div class="max-w-[1600px] mx-auto mt-16 pt-8 border-t border-white/5 flex flex-col md:flex-row justify-between items-center text-[0.65rem] uppercase tracking-widest text-cbvh-gray/60">
-            <p class="text-center md:text-left leading-relaxed">&copy; {{ date('Y') }} CBVH Haute Joaillerie.<br class="md:hidden"> All rights reserved.</p>
+            <p class="text-center md:text-left leading-relaxed">&copy; {{ date('Y') }} CHEANG BAK VAN HONG JEWELRY.<br class="md:hidden"> All rights reserved.</p>
             <div class="flex space-x-6 mt-4 md:mt-0">
                 <a href="#" class="hover:text-cbvh-gold transition">Legal Notice</a>
                 <a href="#" class="hover:text-cbvh-gold transition">Privacy Policy</a>
@@ -104,11 +109,11 @@
         <nav class="flex flex-col items-center text-center w-full max-w-lg mx-auto">
             <a href="{{ route('showcase') }}" class="menu-link font-serif text-3xl md:text-5xl {{ request()->routeIs('showcase') ? 'text-cbvh-gold' : 'text-cbvh-ivory' }} hover:text-cbvh-gold transition-colors duration-300 mb-8">Home</a>
             <a href="{{ route('collections') }}" class="menu-link font-serif text-3xl md:text-5xl {{ request()->routeIs('collections') ? 'text-cbvh-gold' : 'text-cbvh-ivory' }} hover:text-cbvh-gold transition-colors duration-300 mb-8">Collections</a>
-            <a href="{{ route('atelier') }}" class="menu-link font-serif text-3xl md:text-5xl {{ request()->routeIs('atelier') ? 'text-cbvh-gold' : 'text-cbvh-ivory' }} hover:text-cbvh-gold transition-colors duration-300 mb-8">L'Atelier</a>
+            <a href="{{ route('atelier') }}" class="menu-link font-serif text-3xl md:text-5xl {{ request()->routeIs('atelier') ? 'text-cbvh-gold' : 'text-cbvh-ivory' }} hover:text-cbvh-gold transition-colors duration-300 mb-8">Craftsmanship</a>
             <a href="{{ route('gemology') }}" class="menu-link font-serif text-3xl md:text-5xl {{ request()->routeIs('gemology') ? 'text-cbvh-gold' : 'text-cbvh-ivory' }} hover:text-cbvh-gold transition-colors duration-300 mb-10">Gemology</a>
             
             <div class="flex flex-col items-center w-full">
-                <a href="{{ route('about') }}" class="menu-link font-serif text-3xl md:text-5xl {{ request()->routeIs('about') ? 'text-cbvh-gold' : 'text-cbvh-ivory' }} hover:text-cbvh-gold transition-colors duration-300 mb-6">About Maison</a>
+                <a href="{{ route('about') }}" class="menu-link font-serif text-3xl md:text-5xl {{ request()->routeIs('about') ? 'text-cbvh-gold' : 'text-cbvh-ivory' }} hover:text-cbvh-gold transition-colors duration-300 mb-6">About CBVH</a>
                 
                 <!-- Sub-links visual group -->
                 <div class="flex flex-col items-center space-y-5">

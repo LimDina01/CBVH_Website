@@ -1,36 +1,122 @@
 document.addEventListener('DOMContentLoaded', () => {
-    /*
-    // --- Custom Cursor (Disabled for now) ---
-    const cursor = document.getElementById('custom-cursor');
+    // --- Combined Page Transition Loader ---
+    const topProgressBar = document.getElementById('top-progress-bar');
+    const pageLoader = document.getElementById('page-transition-loader');
+    
+    if (topProgressBar && pageLoader) {
+        document.addEventListener('click', (e) => {
+            const link = e.target.closest('a');
+            if (!link) return;
+            
+            const href = link.getAttribute('href');
+            const target = link.getAttribute('target');
+            
+            // Only trigger for internal links that navigate away
+            if (
+                href && 
+                !href.startsWith('#') && 
+                !href.startsWith('mailto:') &&
+                !href.startsWith('tel:') &&
+                target !== '_blank' &&
+                !link.hasAttribute('download') &&
+                !e.ctrlKey && 
+                !e.metaKey
+            ) {
+                let isInternal = false;
+                
+                // If it's an absolute URL, check if it's the same origin
+                if (href.startsWith('http')) {
+                    try {
+                        const url = new URL(href);
+                        if (url.origin === window.location.origin) {
+                            // If it's the same page and has a hash, it's just a scroll. Otherwise it will reload/navigate.
+                            if (url.pathname === window.location.pathname && url.hash) {
+                                isInternal = false;
+                            } else {
+                                isInternal = true;
+                            }
+                        }
+                    } catch (err) {}
+                } 
+                // If it's a relative path starting with /
+                else if (href.startsWith('/')) {
+                    const [pathOnly, hash] = href.split('#');
+                    if (pathOnly === window.location.pathname && hash) {
+                        isInternal = false;
+                    } else {
+                        isInternal = true;
+                    }
+                }
+                
+                if (isInternal) {
+                    // Stop the browser from instantly navigating and freezing the page (fixes iOS Safari)
+                    e.preventDefault();
+
+                    // Show full screen fade
+                    pageLoader.classList.remove('opacity-0', 'pointer-events-none');
+                    pageLoader.classList.add('opacity-100', 'pointer-events-auto');
+                    
+                    // Show and animate progress bar
+                    topProgressBar.classList.remove('opacity-0');
+                    topProgressBar.classList.add('opacity-100');
+                    
+                    setTimeout(() => { topProgressBar.style.width = '30%'; }, 10);
+                    setTimeout(() => { topProgressBar.style.width = '60%'; }, 300);
+                    setTimeout(() => { topProgressBar.style.width = '85%'; }, 800);
+
+                    // Navigate after a short delay to give Safari time to render the black screen
+                    setTimeout(() => {
+                        window.location.href = href;
+                    }, 200);
+                }
+            }
+        });
+
+        // Hide loaders when returning via back button
+        window.addEventListener('pageshow', (e) => {
+            if (e.persisted) {
+                pageLoader.classList.add('opacity-0', 'pointer-events-none');
+                pageLoader.classList.remove('opacity-100', 'pointer-events-auto');
+                
+                topProgressBar.classList.add('opacity-0');
+                setTimeout(() => {
+                    topProgressBar.style.width = '0';
+                }, 300);
+            }
+        });
+    }
+
+    // --- Custom Cursor Dot (Enabled for zoom) ---
+    // const cursor = document.getElementById('custom-cursor'); // Keep circle disabled
     const cursorDot = document.getElementById('custom-cursor-dot');
     
-    if (cursor && cursorDot) {
+    if (cursorDot) {
         // Hide globally by default
-        cursor.classList.add('opacity-0');
         cursorDot.classList.add('opacity-0');
-
-        document.addEventListener('mousemove', (e) => {
-            cursor.style.transform = `translate(${e.clientX - 12}px, ${e.clientY - 12}px)`;
-            cursorDot.style.transform = `translate(${e.clientX - 3}px, ${e.clientY - 3}px)`;
-        });
 
         // Only show cursor on the media container (product image)
         const mediaContainer = document.getElementById('media-container');
         if (mediaContainer) {
+            mediaContainer.addEventListener('mousemove', (e) => {
+                const rect = mediaContainer.getBoundingClientRect();
+                const x = e.clientX - rect.left;
+                const y = e.clientY - rect.top;
+                
+                // Position dot relative to the top-left of the container
+                cursorDot.style.transform = `translate(${x - 3}px, ${y - 3}px)`;
+            });
+
             mediaContainer.addEventListener('mouseenter', () => {
                 // Only show if the device has a real mouse
                 if (window.matchMedia('(hover: hover)').matches) {
-                    cursor.classList.remove('opacity-0');
                     cursorDot.classList.remove('opacity-0');
                 }
             });
             mediaContainer.addEventListener('mouseleave', () => {
-                cursor.classList.add('opacity-0');
                 cursorDot.classList.add('opacity-0');
             });
         }
     }
-    */
 
     // --- Media Gallery Switcher ---
     const tabs = document.querySelectorAll('.gallery-tab');

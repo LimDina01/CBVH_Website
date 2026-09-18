@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('title', "About Maison CBVH | High-Quality, Luxurious, and Trusted Jewelry")
+@section('title', "About CBVH | High-Quality, Luxurious, and Trusted Jewelry")
 
 @section('content')
 <div class="w-full min-h-screen bg-cbvh-obsidian relative selection:bg-cbvh-gold/30 selection:text-white">
@@ -153,8 +153,8 @@
     <!-- Location & Map -->
     <section id="location" class="bg-cbvh-obsidian py-24 px-6 md:px-12 border-t border-cbvh-gold-20 scroll-mt-24">
         <div class="max-w-[1600px] mx-auto text-center mb-12 reveal-element">
-            <h3 class="text-xs uppercase tracking-[0.2em] font-semibold text-cbvh-gold mb-4">Our Salons</h3>
-            <h4 class="font-serif text-3xl md:text-4xl text-cbvh-ivory">Visit Maison CBVH</h4>
+            <h3 class="text-xs uppercase tracking-[0.2em] font-semibold text-cbvh-gold mb-4">Our Showrooms</h3>
+            <h4 class="font-serif text-3xl md:text-4xl text-cbvh-ivory">Visit CBVH</h4>
             <p class="text-cbvh-gray font-light max-w-xl mx-auto mt-6 text-sm">
                 Experience our high jewelry collections in person. Private viewings are held at our Phnom Penh headquarters.
             </p>
