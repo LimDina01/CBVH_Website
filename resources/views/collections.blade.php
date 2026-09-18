@@ -9,7 +9,7 @@
     <section class="pt-8 pb-12 px-6 md:px-12 max-w-[1600px] mx-auto text-center relative reveal-element">
         <div class="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[300px] bg-cbvh-gold/5 rounded-full blur-[120px] pointer-events-none"></div>
         <span class="text-[0.65rem] uppercase tracking-[0.3em] text-cbvh-gold mb-4 block relative z-10">Haute Joaillerie Archive</span>
-        <h1 class="font-serif text-5xl md:text-7xl font-light text-cbvh-ivory mb-4 gold-shimmer relative z-10">
+        <h1 class="font-serif text-5xl md:text-7xl font-light text-cbvh-ivory mb-4 pb-2 gold-shimmer relative z-10">
             Signature Collections
         </h1>
         <p class="text-cbvh-gray font-light max-w-2xl mx-auto text-sm md:text-base leading-relaxed relative z-10">

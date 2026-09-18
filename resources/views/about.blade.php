@@ -67,19 +67,19 @@
             <!-- C B V H Acronym -->
             <div class="grid grid-cols-2 md:grid-cols-4 gap-8 mb-20">
                 <div class="text-center group">
-                    <div class="text-6xl font-serif font-light text-cbvh-gold [@media(hover:hover)]:text-white/5 [@media(hover:hover)]:group-hover:text-cbvh-gold transition-colors duration-500 mb-2">C</div>
+                    <div class="text-6xl font-serif font-light text-cbvh-gold [@media(hover:hover)]:text-white/20 [@media(hover:hover)]:group-hover:text-cbvh-gold transition-colors duration-500 mb-2">C</div>
                     <div class="text-sm tracking-[0.2em] uppercase text-cbvh-ivory">Creativity</div>
                 </div>
                 <div class="text-center group">
-                    <div class="text-6xl font-serif font-light text-cbvh-gold [@media(hover:hover)]:text-white/5 [@media(hover:hover)]:group-hover:text-cbvh-gold transition-colors duration-500 mb-2">B</div>
+                    <div class="text-6xl font-serif font-light text-cbvh-gold [@media(hover:hover)]:text-white/20 [@media(hover:hover)]:group-hover:text-cbvh-gold transition-colors duration-500 mb-2">B</div>
                     <div class="text-sm tracking-[0.2em] uppercase text-cbvh-ivory">Benevolence</div>
                 </div>
                 <div class="text-center group">
-                    <div class="text-6xl font-serif font-light text-cbvh-gold [@media(hover:hover)]:text-white/5 [@media(hover:hover)]:group-hover:text-cbvh-gold transition-colors duration-500 mb-2">V</div>
+                    <div class="text-6xl font-serif font-light text-cbvh-gold [@media(hover:hover)]:text-white/20 [@media(hover:hover)]:group-hover:text-cbvh-gold transition-colors duration-500 mb-2">V</div>
                     <div class="text-sm tracking-[0.2em] uppercase text-cbvh-ivory">Virtue</div>
                 </div>
                 <div class="text-center group">
-                    <div class="text-6xl font-serif font-light text-cbvh-gold [@media(hover:hover)]:text-white/5 [@media(hover:hover)]:group-hover:text-cbvh-gold transition-colors duration-500 mb-2">H</div>
+                    <div class="text-6xl font-serif font-light text-cbvh-gold [@media(hover:hover)]:text-white/20 [@media(hover:hover)]:group-hover:text-cbvh-gold transition-colors duration-500 mb-2">H</div>
                     <div class="text-sm tracking-[0.2em] uppercase text-cbvh-ivory">Honor</div>
                 </div>
             </div>
